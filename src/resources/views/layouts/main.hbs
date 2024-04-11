@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>hellooooo</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="/css/app.css">
+        <link rel="stylesheet" href="/css/base.css">
+        <link rel="stylesheet" href="/css/grid.css">
+        <link rel="stylesheet" href="/css/responsive.css">
+
+
+    
+    </head>
+    <body>
+       <div class="app">
+
+        {{> header}}
+        <div class="container1">
+        {{{body}}}
+        </div>
+        {{> footer}}
+        
+        <!-- MODAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA -->
+        <div id="tuilamodal" class="modal">
+            <div  id="tuilamodal_overlay" class="modal_overlay">
+
+            </div>
+            <div  class="modal_body">       
+                 <!-- REGISTER FORM   -->
+                 <div id="register" class="auth-form register">
+                    <div class="auth_form_container">
+                        <div class="auth_form_header">
+                            <h3  class="auth_heading">Đăng ký</h3>
+                            <span id="change_to_log" class="auth_switch">Đăng nhập</span>
+                        </div>
+                        <div class="auth_form_form">
+                            <div class="auth_form_group">
+                                <input type="text" class="auth_form_input" placeholder="Email của bạn">
+                            </div>
+                            <div class="auth_form_group">
+                                <input type="password" class="auth_form_input" placeholder="Mật khẩu của bạn">
+                            </div>
+                            <div class="auth_form_group">
+                                <input type="password" class="auth_form_input" placeholder="Nhập lại mật khẩu">
+                            </div>
+                        </div>
+                        <div class="authform_aside">
+                            <p class="auth_form_policy_text">Bằng việc đăng kí, bạn đã đồng ý với Shopee về
+                                <a href="" class="auth_form_policy_link">Điều khoản dịch vụ </a> &
+                                <a href="" class="auth_form_policy_link">Chính sách bảo mật</a>
+                            </p>
+                        </div>           
+                        <div class="auth_form_control">
+                            <button  id="tuiladeback_register" class="btn om btnac">TRỞ LẠI</button>
+                            <button class="btn btn_primary">ĐĂNG KÝ</button>
+                        </div>
+                    </div>
+                    <div class="auth_form_socials">
+                        <a href="" class="btn facebook nho btn_width_icon">
+                            <i class="fa-brands ha fa-square-facebook"></i>
+                            <span class="chhucu">Kết nối với Facebook</span>
+                        </a>
+                        <a href="" class="btn google nho btn_width_icon">
+                            <i class="fa-brands ha fa-google"></i>
+                            <span class="chhucu">Kết nối với Google</span>
+                        </a>
+                    </div>
+                </div> 
+                <!-- LOGIN FORM -->
+                <div id="login"class="auth-form login">
+                    <div class="auth_form_container">
+                        <div class="auth_form_header">
+                            <h3 class="auth_heading">Đăng nhập</h3>
+                            <span id="change_to_reg" class="auth_switch">Đăng ký</span>
+                        </div>
+                        <div class="auth_form_form">
+                            <div class="auth_form_group">
+                                <input type="text" class="auth_form_input" placeholder="Email của bạn">
+                            </div>
+                            <div class="auth_form_group">
+                                <input type="password" class="auth_form_input" placeholder="Mật khẩu của bạn">
+                            </div>                          
+                        </div>
+                        <div class="authform_aside">
+                            <div class="helpme">
+                                <a href="" class="authform_help_link hach">Quên mật khẩu</a>
+                                <a href="" class="authform_help_link hallo">Cần trợ giúp?</a>
+                            </div>
+                        </div>           
+                        <div class="auth_form_control">
+                            <button id="tuiladeback_login" class="btn om btnac">TRỞ LẠI</button>
+                            <button class="btn btn_primary">ĐĂNG NHẬP</button>
+                        </div>
+                    </div>
+                    <div class="auth_form_socials">
+                        <a href="" class="btn facebook nho btn_width_icon">
+                            <i class="fa-brands ha fa-square-facebook"></i>
+                            <span class="chhucu">Kết nối với Facebook</span>
+                        </a>
+                        <a href="" class="btn google nho btn_width_icon">
+                            <i class="fa-brands ha fa-google"></i>
+                            <span class="chhucu">Kết nối với Google</span>
+                        </a>
+                    </div>
+                </div>   
+            </div> 
+         </div>
+    <label class="nav_overlay" for="nav-mobile-input"></label>
+    
+    <nav class="category-2" id="jajaa">
+        <h3 class="category_heading">
+            <i class="category_heading-icon fa-solid fa-list"></i>
+            <span class="category-text">Danh mục</span>    
+        </h3>
+        <ul class="category-list">
+            <li class="category-item category-item__link-active">
+                <a href="" class="category-item__link">Sản Phẩm</a>
+            </li>
+            <li class="category-item">
+                <a href="" class="category-item__link haizz">Sách Mới</a>
+            </li>
+            <li class="category-item">
+                <a href="" class="category-item__link haizz">Light Novel</a>
+            </li>
+            <li class="category-item">
+                <a href="" class="category-item__link haizz">Truyện Tranh</a>
+            </li>
+            <li class="category-item">
+                <a href="" class="category-item__link haizz">Đam Mỹ-BL-GL</a>
+            </li>
+        </ul>
+    </nav>
+        <script src="/js/main.js"></script>
+       
+    </body>
+</html>

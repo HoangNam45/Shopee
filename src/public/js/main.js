@@ -14,8 +14,6 @@ checkbox2.addEventListener("change", function() {
 });
 
 
-
-
 // XỬ LÝ ICON MENU
 // document.addEventListener("DOMContentLoaded", function () {
 //     var menuIcon = document.getElementById("menuIcon");
@@ -35,13 +33,6 @@ checkbox2.addEventListener("change", function() {
 // });
 
 
-
-
-
-
-
-
-
 document.addEventListener('DOMContentLoaded', function () {
     var checkbox = document.getElementById('nav-mobile-input');
     var overlay = document.querySelector('.nav_overlay');
@@ -57,4 +48,60 @@ document.addEventListener('DOMContentLoaded', function () {
             caytimdai.style.transform = 'translateX(-100%)'
         }
     });
+});
+// Xử lý form login
+
+var modal= document.getElementById("tuilamodal");
+var modal_overlay = document.getElementById("tuilamodal_overlay");
+
+var login_btn=document.getElementById("tuilanam");
+var login = document.getElementById("login");
+var back_login=document.getElementById("tuiladeback_login");
+var change_to_reg=document.getElementById("change_to_reg");
+
+
+login_btn.addEventListener("click", function() {
+    modal.style.display = "flex";
+    login.style.display = "block";
+    
+})
+
+change_to_reg.addEventListener("click", function() {
+    login.style.display = "none";
+    register.style.display = "block";
+})
+
+back_login.addEventListener("click", function() {
+    modal.style.display = "none";
+    login.style.display = "none";
+})
+
+// Xử lý form register
+var register_btn=document.getElementById("tuicunglanam");
+var register = document.getElementById("register");
+var change_to_log = document.getElementById("change_to_log");
+var back_register = document.getElementById("tuiladeback_register")
+
+register_btn.addEventListener("click", function() {
+    modal.style.display = "flex";
+    register.style.display = "block";
+    
+})
+
+change_to_log.addEventListener("click", function() {
+    register.style.display = "none";
+    login.style.display = "block";
+})
+
+back_register.addEventListener("click", function() {
+    modal.style.display = "none";
+    register.style.display = "none";
+})
+// Xử lý nhấp ra ngoài form
+window.addEventListener("click", function (event) {
+    if (event.target == modal_overlay ) {
+       modal.style.display = "none";
+       register.style.display = "none";
+       login.style.display = "none";
+    }
 });

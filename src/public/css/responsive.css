@@ -1,0 +1,72 @@
+/* Mobile & Tablet */
+@media (max-width: 1023px) {
+  .header {
+    height: 70px;
+    position: fixed;
+    z-index: 5;
+    width: 100%;
+    top: 0; }
+  .header_search {
+    height: 70px; }
+  .hide-on-mobile-tablet {
+    display: none; }
+  .cart_list {
+    position: fixed;
+    top: 70px;
+    right: 0;
+    width: 50%; }
+  .cart_list::before {
+    display: none; }
+  .container {
+    margin-top: calc(70px + 46px); }
+  .header_sort-bar {
+    display: flex; }
+  .vlhaha {
+    text-align: center;
+    margin-bottom: 50px; }
+  .list_img {
+    justify-content: center; }
+  .caigizay {
+    display: flex;
+    justify-content: center; }
+  .footer_dowload_qr {
+    height: 9rem;
+    width: 9rem; }
+  .footer_dowload-icon {
+    width: 7.3rem;
+    height: 2rem; }
+  .footer__heading {
+    font-size: 16px; }
+  .footer-item_link {
+    font-size: 15px; }
+  .khongbietgoilagi {
+    display: flex; }
+  .hide-on-mobile {
+    display: none; }
+  .header_giohang {
+    width: 0; }
+  .header_timkiem {
+    z-index: 2;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 70px;
+    height: 46px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    padding: 0 8px;
+    display: none; }
+  .search_history {
+    position: fixed;
+    top: 116px;
+    width: 100%; }
+  .close_btn {
+    display: block; }
+  .category_heading-icon {
+    font-size: 1.5rem; }
+  .category-text {
+    font-size: 1.7rem; }
+  .category-item__link {
+    font-size: 1.3rem;
+    padding: 14px 16px; } }
+
+/* Tablet */
