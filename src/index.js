@@ -1,7 +1,12 @@
 const express = require('express')
 const path = require('path')
 const app = express()
+
 const route = require('./routes/index')
+const db = require('./config/db/index')
+
+//Connect to DB
+db.connect();
 
 // Setup static file
 app.use(express.static(path.join(__dirname, 'public')))
