@@ -2,7 +2,10 @@ const User = require('./models/User')
 class SiteController {
     // [GET] /
     home(req,res) {
-        res.render('home')
+        const data = {
+            account: req.session.account || null
+        };
+        res.render('home', data)
     }
     // [POST] /store
     store(req,res) {
@@ -31,9 +34,10 @@ class SiteController {
         }
         else{
             req.session.userId = user._id;
-            req.session.username = user.account;
-            res.json({ message: 'Đăng nhập thành công' });
-            console.log(req.session)
+            req.session.account = user.account;
+            res.redirect('/')
+            console.log(account)
+            
         }
         
     }

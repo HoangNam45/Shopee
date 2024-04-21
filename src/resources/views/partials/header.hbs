@@ -79,8 +79,14 @@
                             Trợ giúp
                         </a>
                     </li>
-                    <li id="tuicunglanam" class="item fufu gach">Đăng ký</li>
-                    <li id="tuilanam" class="item fufu">Đăng nhập</li>
+                    
+                    {{#if account}}
+                        <a class="item">{{account}}!</a>
+                    {{else}}
+                        <li id="tuicunglanam" class="item fufu gach">Đăng ký</li>
+                        <li id="tuilanam" class="item fufu">Đăng nhập</li>
+                    {{/if}}
+                    
                 </ul>
                 </nav>
                 <div class="header_search">
