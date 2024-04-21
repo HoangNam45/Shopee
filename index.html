@@ -894,45 +894,47 @@
             </div>
             <div  class="modal_body">       
                  <!-- REGISTER FORM   -->
-                 <div id="register" class="auth-form register">
-                    <div class="auth_form_container">
-                        <div class="auth_form_header">
-                            <h3  class="auth_heading">Đăng ký</h3>
-                            <span id="change_to_log" class="auth_switch">Đăng nhập</span>
-                        </div>
-                        <div class="auth_form_form">
-                            <div class="auth_form_group">
-                                <input type="text" class="auth_form_input" placeholder="Email của bạn">
+                 <form method="POST" action="/store">
+                     <div id="register" class="auth-form register">
+                        <div class="auth_form_container">
+                            <div class="auth_form_header">
+                                <h3  class="auth_heading">Đăng ký</h3>
+                                <span id="change_to_log" class="auth_switch">Đăng nhập</span>
                             </div>
-                            <div class="auth_form_group">
-                                <input type="password" class="auth_form_input" placeholder="Mật khẩu của bạn">
+                            <div class="auth_form_form">
+                                <div class="auth_form_group">
+                                    <input type="text" class="auth_form_input" placeholder="Email của bạn" name="account">
+                                </div>
+                                <div class="auth_form_group">
+                                    <input type="password" class="auth_form_input" placeholder="Mật khẩu của bạn" name="password">
+                                </div>
+                                <!-- <div class="auth_form_group">
+                                    <input type="password" class="auth_form_input" placeholder="Nhập lại mật khẩu">
+                                </div> -->
                             </div>
-                            <div class="auth_form_group">
-                                <input type="password" class="auth_form_input" placeholder="Nhập lại mật khẩu">
+                            <div class="authform_aside">
+                                <p class="auth_form_policy_text">Bằng việc đăng kí, bạn đã đồng ý với Shopee về
+                                    <a href="" class="auth_form_policy_link">Điều khoản dịch vụ </a> &
+                                    <a href="" class="auth_form_policy_link">Chính sách bảo mật</a>
+                                </p>
+                            </div>           
+                            <div class="auth_form_control">
+                                <button  id="tuiladeback_register" class="btn om btnac">TRỞ LẠI</button>
+                                <button class="btn btn_primary">ĐĂNG KÝ</button>
                             </div>
                         </div>
-                        <div class="authform_aside">
-                            <p class="auth_form_policy_text">Bằng việc đăng kí, bạn đã đồng ý với Shopee về
-                                <a href="" class="auth_form_policy_link">Điều khoản dịch vụ </a> &
-                                <a href="" class="auth_form_policy_link">Chính sách bảo mật</a>
-                            </p>
-                        </div>           
-                        <div class="auth_form_control">
-                            <button  id="tuiladeback_register" class="btn om btnac">TRỞ LẠI</button>
-                            <button class="btn btn_primary">ĐĂNG KÝ</button>
+                        <div class="auth_form_socials">
+                            <a href="" class="btn facebook nho btn_width_icon">
+                                <i class="fa-brands ha fa-square-facebook"></i>
+                                <span class="chhucu">Kết nối với Facebook</span>
+                            </a>
+                            <a href="" class="btn google nho btn_width_icon">
+                                <i class="fa-brands ha fa-google"></i>
+                                <span class="chhucu">Kết nối với Google</span>
+                            </a>
                         </div>
-                    </div>
-                    <div class="auth_form_socials">
-                        <a href="" class="btn facebook nho btn_width_icon">
-                            <i class="fa-brands ha fa-square-facebook"></i>
-                            <span class="chhucu">Kết nối với Facebook</span>
-                        </a>
-                        <a href="" class="btn google nho btn_width_icon">
-                            <i class="fa-brands ha fa-google"></i>
-                            <span class="chhucu">Kết nối với Google</span>
-                        </a>
-                    </div>
-                </div> 
+                    </div> 
+                 </form>
                 <!-- LOGIN FORM -->
                 <div id="login"class="auth-form login">
                     <div class="auth_form_container">

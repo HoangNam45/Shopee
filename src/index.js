@@ -5,6 +5,13 @@ const app = express()
 const route = require('./routes/index')
 const db = require('./config/db/index')
 
+const session = require('express-session');
+app.use(session({
+    secret: 'your-secret-key', // Chuỗi bí mật để mã hóa phiên
+    resave: false, // Không lưu lại phiên nếu không có sự thay đổi
+    saveUninitialized: false, // Không lưu phiên chưa được khởi tạo
+    cookie: { secure: false } // Sử dụng cookie không an toàn (false cho http, true cho https)
+}));
 //Connect to DB
 db.connect();
 
@@ -19,7 +26,7 @@ app.engine('hbs', handlebars.engine({
 app.set('view engine', 'hbs');
 app.set('views', path.join(__dirname, 'resources/views'));
 //
-
+app.use(express.urlencoded({ extended: true }));
 route(app)
 
 app.listen( 5000, () => {
