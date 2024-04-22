@@ -81,7 +81,17 @@
                     </li>
                     
                     {{#if account}}
-                        <a class="item">{{account}}!</a>
+                        <li class="item user_option">
+                            <a class="">{{account}}!</a>
+                            <ul class="option_list">
+                                <li class="option_text">
+                                    <a class="option">Đổi mật khẩu</a>
+                                </li>
+                                <li class="option_text">
+                                    <a class="option">Đăng xuất</a>
+                                </li>
+                            </ul>
+                        </li>
                     {{else}}
                         <li id="tuicunglanam" class="item fufu gach">Đăng ký</li>
                         <li id="tuilanam" class="item fufu">Đăng nhập</li>

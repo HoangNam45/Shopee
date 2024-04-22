@@ -1065,3 +1065,46 @@
 
 .register, .login {
   display: none; }
+/*  */
+.option_text{
+  color: #555;
+  display: block;
+  height: 40px;
+  display: flex;
+  text-align: center;
+  align-items: center;
+}
+.option_list{
+    position: absolute;
+    top: 118%;
+    width: 150px;
+    right: 0;
+    border: 1px solid #D3D3D3;
+    background-color: #fff;
+    z-index: 2;
+    border-radius: 2px;
+    list-style-type: none;
+    display: none;
+
+  }
+  .option{
+    margin-left: 5px;
+  }
+  .option_text:hover{
+    background-color: #fafafa;
+    cursor: pointer;
+  }
+  .option_list::before {
+    content: "";
+    border: 20px solid;
+    border-color: transparent transparent #fff transparent;
+    position: absolute;
+    right: -2px;
+    top: -25px; }
+  
+
+
+
+
+  .user_option:hover .option_list {
+    display: block; }
