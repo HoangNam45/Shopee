@@ -1067,7 +1067,6 @@
   display: none; }
 /*  */
 .option_text{
-  color: #555;
   display: block;
   height: 40px;
   display: flex;
@@ -1089,6 +1088,8 @@
   }
   .option{
     margin-left: 5px;
+    text-decoration: none;
+    color: #555;
   }
   .option_text:hover{
     background-color: #fafafa;

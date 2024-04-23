@@ -41,5 +41,24 @@ class SiteController {
         }
         
     }
+    logout(req,res) {
+        if (req.session) {
+            req.session.destroy((err) => {
+                if (err) {
+                    console.error('Lỗi khi đăng xuất:', err);
+                    res.status(500).json({ message: 'Có lỗi xảy ra khi đăng xuất' });
+                    return;
+                }
+                res.redirect('/')
+            });
+            
+        } 
+    }
+    update(req,res) {
+        const data = {
+            account: req.session.account || null
+        };
+        res.render('hbs', data)
+    }
 }
 module.exports = new SiteController
