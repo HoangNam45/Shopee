@@ -1,4 +1,5 @@
 const User = require('./models/User')
+
 class SiteController {
     // [GET] /
     home(req,res) {
@@ -58,7 +59,7 @@ class SiteController {
         const data = {
             account: req.session.account || null
         };
-        res.render('hbs', data)
+        res.render('update', data)
     }
 }
 module.exports = new SiteController
