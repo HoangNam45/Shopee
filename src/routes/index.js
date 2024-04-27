@@ -1,6 +1,9 @@
 
-const siteController = require('./site')
+
+const siteRouter = require('./site')
+const meRouter = require('./me')
 function route(app) {
-    app.use('/', siteController)
+    app.use('/me', meRouter)
+    app.use('/', siteRouter)
 }
 module.exports = route

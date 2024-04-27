@@ -36,6 +36,7 @@ class SiteController {
         else{
             req.session.userId = user._id;
             req.session.account = user.account;
+            req.session.password = user.password;
             res.redirect('/')
             console.log(account)
             
@@ -55,11 +56,6 @@ class SiteController {
             
         } 
     }
-    update(req,res) {
-        const data = {
-            account: req.session.account || null
-        };
-        res.render('update', data)
-    }
+    
 }
 module.exports = new SiteController

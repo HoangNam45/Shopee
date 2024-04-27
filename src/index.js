@@ -1,6 +1,7 @@
 const express = require('express')
 const path = require('path')
 const app = express()
+const methodOverride = require('method-override')
 
 const route = require('./routes/index')
 const db = require('./config/db/index')
@@ -19,6 +20,7 @@ db.connect();
 app.use(express.static(path.join(__dirname, 'public')))
 
 // Setup handlebar(template engine)
+app.use(methodOverride('_method'))
 const handlebars = require('express-handlebars')
 app.engine('hbs', handlebars.engine({
     extname: '.hbs'
