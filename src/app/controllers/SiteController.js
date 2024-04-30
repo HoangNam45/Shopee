@@ -4,7 +4,8 @@ class SiteController {
     // [GET] /
     home(req,res) {
         const data = {
-            account: req.session.account || null
+            account: req.session.account || null,
+            avatar: req.session.avatar
         };
         res.render('home', data)
     }
@@ -37,6 +38,7 @@ class SiteController {
             req.session.userId = user._id;
             req.session.account = user.account;
             req.session.password = user.password;
+            req.session.avatar = user.avatar;
             res.redirect('/')
             console.log(account)
             

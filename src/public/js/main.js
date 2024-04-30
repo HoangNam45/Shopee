@@ -53,28 +53,29 @@ document.addEventListener('DOMContentLoaded', function () {
 
 var modal= document.getElementById("tuilamodal");
 var modal_overlay = document.getElementById("tuilamodal_overlay");
-
 var login_btn=document.getElementById("tuilanam");
 var login = document.getElementById("login");
 var back_login=document.getElementById("tuiladeback_login");
 var change_to_reg=document.getElementById("change_to_reg");
 
-
-login_btn.addEventListener("click", function() {
-    modal.style.display = "flex";
-    login.style.display = "block";
+if(login_btn) {
+    login_btn.addEventListener("click", function() {
+        modal.style.display = "flex";
+        login.style.display = "block";
+        
+    })
     
-})
+    change_to_reg.addEventListener("click", function() {
+        login.style.display = "none";
+        register.style.display = "block";
+    })
+    
+    back_login.addEventListener("click", function() {
+        modal.style.display = "none";
+        login.style.display = "none";
+    })
+}
 
-change_to_reg.addEventListener("click", function() {
-    login.style.display = "none";
-    register.style.display = "block";
-})
-
-back_login.addEventListener("click", function() {
-    modal.style.display = "none";
-    login.style.display = "none";
-})
 
 // Xử lý form register
 var register_btn=document.getElementById("tuicunglanam");
@@ -82,21 +83,24 @@ var register = document.getElementById("register");
 var change_to_log = document.getElementById("change_to_log");
 var back_register = document.getElementById("tuiladeback_register")
 
-register_btn.addEventListener("click", function() {
-    modal.style.display = "flex";
-    register.style.display = "block";
+if(register_btn){
+    register_btn.addEventListener("click", function() {
+        modal.style.display = "flex";
+        register.style.display = "block";
+        
+    })
     
-})
+    change_to_log.addEventListener("click", function() {
+        register.style.display = "none";
+        login.style.display = "block";
+    })
+    
+    back_register.addEventListener("click", function() {
+        modal.style.display = "none";
+        register.style.display = "none";
+    })
+}
 
-change_to_log.addEventListener("click", function() {
-    register.style.display = "none";
-    login.style.display = "block";
-})
-
-back_register.addEventListener("click", function() {
-    modal.style.display = "none";
-    register.style.display = "none";
-})
 // Xử lý nhấp ra ngoài form
 window.addEventListener("click", function (event) {
     if (event.target == modal_overlay ) {
@@ -105,3 +109,21 @@ window.addEventListener("click", function (event) {
        login.style.display = "none";
     }
 });
+// Xử lý avatar
+    const file_input = document.getElementById('avt_input')
+    if(file_input){
+        file_input.addEventListener('change', function(event) {
+            var file = event.target.files[0];
+            var reader = new FileReader();
+            reader.onload = function(e) {
+              document.getElementById('avatarr').style.backgroundImage = "url(" + e.target.result + ")";
+            };
+            reader.readAsDataURL(file);
+          });
+          document.getElementById('select_img').addEventListener('click', function(event) {
+            event.preventDefault(); // Ngăn chặn form được gửi
+            file_input.click();
+          });
+          console.log(file_input)
+    }
+   

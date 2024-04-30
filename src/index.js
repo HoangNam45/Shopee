@@ -5,6 +5,9 @@ const methodOverride = require('method-override')
 
 const route = require('./routes/index')
 const db = require('./config/db/index')
+
+// Setup static file
+app.use(express.static(path.join(__dirname, 'public')))
 //
 const session = require('express-session');
 app.use(session({
@@ -16,8 +19,7 @@ app.use(session({
 //Connect to DB
 db.connect();
 
-// Setup static file
-app.use(express.static(path.join(__dirname, 'public')))
+
 
 // Setup handlebar(template engine)
 app.use(methodOverride('_method'))
