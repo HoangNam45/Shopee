@@ -27,7 +27,7 @@
             </div>
             <div  class="modal_body">       
                  <!-- REGISTER FORM   -->
-                 <form method="POST" action="/store"> 
+                 <form method="POST" action="/store" id="registrationForm"> 
                  <div id="register" class="auth-form register">
                     <div class="auth_form_container">
                         <div class="auth_form_header">
@@ -36,14 +36,14 @@
                         </div>
                         <div class="auth_form_form">
                             <div class="auth_form_group">
-                                <input type="text" class="auth_form_input" placeholder="Email của bạn" id="account" name="account">
+                                <input type="text" class="auth_form_input" placeholder="Tài khoản của bạn" id="account" name="account" autocomplete="new-password">
                             </div>
                             <div class="auth_form_group">
-                                <input type="password" class="auth_form_input" placeholder="Mật khẩu của bạn" id="password" name="password">
+                                <input type="password" class="auth_form_input" placeholder="Mật khẩu của bạn" id="password" name="password" autocomplete="new-password">
                             </div>
-                            {{!-- <div class="auth_form_group">
-                                <input type="password" class="auth_form_input" placeholder="Nhập lại mật khẩu">
-                            </div> --}}
+                            <div class="auth_form_group">
+                                <input type="password" class="auth_form_input" placeholder="Nhập lại mật khẩu" id="password_rewrite" name="password_rewrite" autocomplete="off"> 
+                            </div>
                         </div>
                         <div class="authform_aside">
                             <p class="auth_form_policy_text">Bằng việc đăng kí, bạn đã đồng ý với Shopee về
@@ -78,10 +78,10 @@
                         </div>
                         <div class="auth_form_form">
                             <div class="auth_form_group">
-                                <input type="text" class="auth_form_input" placeholder="Email của bạn" name="account">
+                                <input type="text" class="auth_form_input" placeholder="Tài khoản của bạn" name="account" autocomplete="new-password">
                             </div>
                             <div class="auth_form_group">
-                                <input type="password" class="auth_form_input" placeholder="Mật khẩu của bạn" name="password">
+                                <input type="password" class="auth_form_input" placeholder="Mật khẩu của bạn" name="password" autocomplete="new-password">
                             </div>                          
                         </div>
                         <div class="authform_aside">
@@ -134,6 +134,7 @@
             </li>
         </ul>
     </nav>
-        <script src="/js/main.js"></script>
+        <script src="https://unpkg.com/validator@13.11.0/validator.min.js"></script>
+        <script type="module" src="/js/main.js"></script>
     </body>
 </html>

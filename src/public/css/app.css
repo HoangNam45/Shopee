@@ -621,7 +621,9 @@
 
 .category {
   background-color: #fff;
-  border-radius: 2px; }
+  border-radius: 2px;
+
+}
 
 .category_heading-icon {
   font-size: 1.2rem;
@@ -1090,6 +1092,8 @@
     margin-left: 5px;
     text-decoration: none;
     color: #555;
+    display: block;
+    width: 100%;
   }
   .option_text:hover{
     background-color: #fafafa;
@@ -1098,6 +1102,7 @@
   .option_list::before {
     content: "";
     border: 20px solid;
+    width: 50px;
     border-color: transparent transparent #fff transparent;
     position: absolute;
     right: -2px;
