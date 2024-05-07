@@ -5,10 +5,11 @@ const router = express.Router()
 const meController = require("../app/controllers/MeController");
 
 const upload = require("../app/middlewares/UploadImg")
+const new_password = require("../app/middlewares/ValidatNewpass");
 
 
 router.post('/update/avatar/edit', upload.single("image"),meController.edit_avatar)
-router.patch('/update/password/edit', meController.edit)
+router.patch('/update/password/edit', new_password,meController.edit)
 router.get('/update/avatar', meController.update_avatar)
 router.get('/update/password', meController.update_password)
 

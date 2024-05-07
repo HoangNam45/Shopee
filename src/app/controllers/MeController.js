@@ -17,7 +17,6 @@ class MeController {
             account: req.session.account || null,
             id: req.session.userId
         };
-
         User.updateOne({_id:data.id}, req.body)
             .then(() => res.redirect('/'))
             .catch(err => res.status(500).json({ message: 'Có lỗi xảy ra khi đổi mật khẩu', error: err }));
