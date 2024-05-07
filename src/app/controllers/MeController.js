@@ -8,6 +8,7 @@ class MeController {
             avatar: req.session.avatar
         };
         res.render('update_password', data);
+        
     }
 
     //[PATCH]
@@ -49,6 +50,7 @@ class MeController {
                     return;
                 }
                 console.log('File đã được xóa thành công.');
+                
             });
         }
  

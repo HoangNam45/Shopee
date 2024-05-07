@@ -101,56 +101,7 @@ if(register_btn){
         register.style.display = "none";
     })
 }
-// Validate form register
-// document.getElementById('registrationForm').addEventListener('submit', function(event) {
-//     event.preventDefault();
 
-//     const account = document.getElementById('account').value;
-//     const password = document.getElementById('password').value;
-//     const re_password = document.getElementById('password_rewrite').value;
-    
-//     if (!validator.isAlphanumeric(account) || !validator.isLength(account, { min: 3, max: 30 })) {
-//         alert('Tài khoản gồm tối thiểu 3 ký tự và tối đa 30 ký tự.');
-//         return;
-//     }
-
-//     if (!validator.isLength(password, { min: 6 })) {
-//         alert('Mật khẩu phải có ít nhất 6 ký tự.');
-//         return;
-//     }
-//     if (re_password!=password) {
-//         alert('Mật khẩu nhập không chính xác.');
-//         return;
-//     }
-//     // Tạo một đối tượng XMLHttpRequest
-//     const xhr = new XMLHttpRequest();
-
-//     // Thiết lập phương thức và URL
-//     xhr.open('POST', '/store', true);
-
-//     // Thiết lập tiêu đề yêu cầu
-//     xhr.setRequestHeader('Content-Type', 'application/json');
-
-//     // Xử lý phản hồi từ máy chủ
-//     xhr.onload = function () {
-//         if (xhr.status >= 200 && xhr.status < 300) {
-//             // Đăng ký thành công
-//             alert('Đăng ký thành công!');
-//         } else {
-//             // Đăng ký thất bại
-//             alert('Đã xảy ra lỗi khi đăng ký.');
-//         }
-//     };
-
-//     // Xử lý lỗi
-//     xhr.onerror = function () {
-//         alert('Đã xảy ra lỗi khi đăng ký.');
-//     };
-
-//     // Gửi dữ liệu biểu mẫu dưới dạng JSON
-//     xhr.send(JSON.stringify({ account: account, password: password }));
-//     console.log(JSON.stringify({ account: account, password: password }))
-// });
 console.log(document.getElementById('registrationForm'))
 // Xử lý nhấp ra ngoài form
 window.addEventListener("click", function (event) {
