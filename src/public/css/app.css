@@ -1190,11 +1190,12 @@
   border-radius: .125rem;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .13);
   box-sizing: border-box;
-  display: flex;
+  /* display: flex; */
   margin: 15px 30px 30px;
   width: 980px;
-  justify-content: center;
-  align-items: center;
+  position: relative;
+  /* justify-content: center;
+  align-items: center; */
 }
 .avatar_wrap{
   height: 280px;
@@ -1203,6 +1204,10 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 .avatarr{
     background-position: 50%;
@@ -1225,12 +1230,25 @@
     min-width: 80px;
     padding: 0 20px;
     font-size: 1.25rem;
+    cursor: pointer;
 }
 
-.avatar_btn:hover{
+.hover_btn_avt:hover{
   background: rgba(0, 0, 0, .02);
 
 }
 .file_input{
   display: none;
+}
+.only_btn{
+  position: relative;
+  top: 500px;
+  display: flex;
+  flex-direction: row-reverse;
+}
+.classrac{
+  margin-right: 8px;
+  background: #bbb9b8;
+  color: #fff;
+  cursor: default;
 }
