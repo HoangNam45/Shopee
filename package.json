@@ -5,13 +5,15 @@
   "main": "src/index.js",
   "scripts": {
     "start": "nodemon --inspect  src/index.js",
-    "watch": "node-sass --watch src/resources/scss/ --output src/public/css/"
+    "watch": "webpack --watch --config webpack.config.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "nodemon": "^3.1.0"
+    "nodemon": "^3.1.0",
+    "webpack": "^5.91.0",
+    "webpack-cli": "^5.1.4"
   },
   "dependencies": {
     "express": "^4.19.2",

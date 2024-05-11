@@ -37,13 +37,15 @@
                         <div class="auth_form_form">
                             <div class="auth_form_group">
                                 <input type="text" class="auth_form_input" placeholder="Tài khoản của bạn" id="account" name="account" autocomplete="new-password">
-                                
+                                <span id="account_valid_text"></span>
                             </div>
                             <div class="auth_form_group">
                                 <input type="password" class="auth_form_input" placeholder="Mật khẩu của bạn" id="password" name="password" autocomplete="new-password">
                             </div>
+                                <span id="passsword_valid_text"></span>
                             <div class="auth_form_group">
                                 <input type="password" class="auth_form_input" placeholder="Nhập lại mật khẩu" id="password_rewrite" name="password_rewrite" autocomplete="off"> 
+                                <span id="password_rewrite_valid_text"></span>
                             </div>
                         </div>
                         <div class="authform_aside">
@@ -136,6 +138,6 @@
         </ul>
     </nav>
         <script src="https://unpkg.com/validator@13.11.0/validator.min.js"></script>
-        <script type="module" src="/js/main.js"></script>
+        <script  src="/js/bundle.js"></script>
     </body>
 </html>
