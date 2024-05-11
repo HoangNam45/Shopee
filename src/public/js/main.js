@@ -1,4 +1,5 @@
 
+
 // XỬ LÝ ICON CLASS
 var checkbox1 = document.getElementById("mobile-search-checkbox");
 var checkbox2 = document.getElementById("mobile-search-close");
@@ -101,6 +102,50 @@ if(register_btn){
         register.style.display = "none";
     })
 }
+//Validate form register
+const validator = require('validator')
+const user_account=document.getElementById('account')
+const user_password=document.getElementById('password')
+const user_password_rewrite=document.getElementById('password_rewrite')
+
+function validateAccount(){
+    const account=user_account.value
+    if (!validator.isAlphanumeric(account) || !validator.isLength(account, { min: 3, max: 30 })) {
+        document.getElementById('account_valid_text').innerHTML = 'Tên người dùng không hợp lệ. Tối thiểu 3 ký tự và tối đa 30 ký tự.';
+    }
+    else {
+        document.getElementById('account_valid_text').innerHTML = '';
+    }
+}
+function validatePassword(){
+    const password=user_passsword.value
+    if (!validator.isLength(password, { min: 6 })) {
+        errors.password = 'Mật khẩu phải có ít nhất 6 ký tự.';
+    }
+    else {
+        document.getElementById('password_valid_text').innerHTML = '';
+    }
+}
+function validatePassword(){
+    const password=user_passsword.value
+    if (!validator.isLength(password, { min: 6 })) {
+        errors.password = 'Mật khẩu phải có ít nhất 6 ký tự.';
+    }
+    else {
+        document.getElementById('password_valid_text').innerHTML = '';
+    }
+}
+
+user_account.addEventListener('blur', function () {
+    validateAccount();
+});
+
+user_password.addEventListener('blur', function () {
+    validatePassword();
+});
+user_password_rewrite.addEventListener('blur', function () {
+    validatePasswordRewrite();
+});
 
 console.log(document.getElementById('registrationForm'))
 // Xử lý nhấp ra ngoài form
