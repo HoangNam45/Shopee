@@ -157,9 +157,16 @@ window.addEventListener("click", function (event) {
     }
 });
 // Xử lý avatar
+    function handleEvent(event) {
+    event.preventDefault(); // Ngăn chặn hành vi mặc định của sự kiện
+  }
+    const submit_avt_btn=document.getElementById('submit_avt_btn')
+    submit_avt_btn.addEventListener('click', handleEvent)
     const file_input = document.getElementById('avt_input')
     if(file_input){
         file_input.addEventListener('change', function(event) {
+            submit_avt_btn.removeEventListener('click', handleEvent)
+            submit_avt_btn.style.cssText = "background: #ee4d2d; color: #fff;";
             var file = event.target.files[0];
             var reader = new FileReader();
             reader.onload = function(e) {

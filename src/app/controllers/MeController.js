@@ -17,10 +17,12 @@ class MeController {
             account: req.session.account || null,
             id: req.session.userId
         };
-        User.updateOne({_id:data.id}, req.body)
+        User.updateOne({_id:data.id}, {password:req.body.new_password})
             .then(() => res.redirect('/'))
             .catch(err => res.status(500).json({ message: 'Có lỗi xảy ra khi đổi mật khẩu', error: err }));
     }
+
+
     update_avatar(req, res) {
         const data = {
             account: req.session.account || null,
@@ -30,6 +32,9 @@ class MeController {
         
         res.render('update_avatar', data);
     }
+
+
+
     //[POST] /me/update/avatar/edit
     edit_avatar=  function(req,res) {
         const fs = require('fs');
