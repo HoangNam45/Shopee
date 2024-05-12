@@ -1,4 +1,8 @@
 
+function handleEvent(event) {
+    event.preventDefault(); // Ngăn chặn hành vi mặc định của sự kiện
+  }
+
 
 // XỬ LÝ ICON CLASS
 var checkbox1 = document.getElementById("mobile-search-checkbox");
@@ -108,36 +112,44 @@ const user_account=document.getElementById('account')
 const user_password=document.getElementById('password')
 const user_password_rewrite=document.getElementById('password_rewrite')
 
+
 function validateAccount(){
     const account=user_account.value
     if (!validator.isAlphanumeric(account) || !validator.isLength(account, { min: 3, max: 30 })) {
-        document.getElementById('account_valid_text').innerHTML = 'Tên người dùng không hợp lệ. Tối thiểu 3 ký tự và tối đa 30 ký tự.';
+        document.getElementById('account_valid_text').innerHTML = 'Tối thiểu 3 ký tự và tối đa 30 ký tự.';
+        return false
     }
     else {
         document.getElementById('account_valid_text').innerHTML = '';
+        return true
     }
 }
 function validatePassword(){
-    const password=user_passsword.value
+    const password=user_password.value
     if (!validator.isLength(password, { min: 6 })) {
-        errors.password = 'Mật khẩu phải có ít nhất 6 ký tự.';
+        document.getElementById('password_valid_text').innerHTML = 'Mật khẩu phải có ít nhất 6 ký tự';
+        return false
     }
     else {
         document.getElementById('password_valid_text').innerHTML = '';
+        return true
     }
 }
-function validatePassword(){
-    const password=user_passsword.value
-    if (!validator.isLength(password, { min: 6 })) {
-        errors.password = 'Mật khẩu phải có ít nhất 6 ký tự.';
+function validatePasswordRewrite(){
+    const password_rewrite=user_password_rewrite.value
+    if (!validator.equals(user_password.value, password_rewrite)) {
+        document.getElementById('password_rewrite_valid_text').innerHTML = 'Mật khẩu nhập lại không trùng khớp với mật khẩu';
+        return false
     }
     else {
-        document.getElementById('password_valid_text').innerHTML = '';
+        document.getElementById('password_rewrite_valid_text').innerHTML = '';
+        return true
     }
 }
 
 user_account.addEventListener('blur', function () {
     validateAccount();
+    console.log(validateAccount())
 });
 
 user_password.addEventListener('blur', function () {
@@ -157,11 +169,10 @@ window.addEventListener("click", function (event) {
     }
 });
 // Xử lý avatar
-    function handleEvent(event) {
-    event.preventDefault(); // Ngăn chặn hành vi mặc định của sự kiện
-  }
     const submit_avt_btn=document.getElementById('submit_avt_btn')
-    submit_avt_btn.addEventListener('click', handleEvent)
+    if(submit_avt_btn){
+        submit_avt_btn.addEventListener('click', handleEvent)
+    }
     const file_input = document.getElementById('avt_input')
     if(file_input){
         file_input.addEventListener('change', function(event) {
