@@ -117,39 +117,35 @@ function validateAccount(){
     const account=user_account.value
     if (!validator.isAlphanumeric(account) || !validator.isLength(account, { min: 3, max: 30 })) {
         document.getElementById('account_valid_text').innerHTML = 'Tối thiểu 3 ký tự và tối đa 30 ký tự.';
-        return false
+
     }
     else {
         document.getElementById('account_valid_text').innerHTML = '';
-        return true
     }
 }
 function validatePassword(){
     const password=user_password.value
     if (!validator.isLength(password, { min: 6 })) {
         document.getElementById('password_valid_text').innerHTML = 'Mật khẩu phải có ít nhất 6 ký tự';
-        return false
+
     }
     else {
         document.getElementById('password_valid_text').innerHTML = '';
-        return true
     }
 }
 function validatePasswordRewrite(){
     const password_rewrite=user_password_rewrite.value
     if (!validator.equals(user_password.value, password_rewrite)) {
         document.getElementById('password_rewrite_valid_text').innerHTML = 'Mật khẩu nhập lại không trùng khớp với mật khẩu';
-        return false
+
     }
     else {
         document.getElementById('password_rewrite_valid_text').innerHTML = '';
-        return true
     }
 }
 
 user_account.addEventListener('blur', function () {
-    validateAccount();
-    console.log(validateAccount())
+    validateAccount()
 });
 
 user_password.addEventListener('blur', function () {
@@ -158,6 +154,16 @@ user_password.addEventListener('blur', function () {
 user_password_rewrite.addEventListener('blur', function () {
     validatePasswordRewrite();
 });
+
+const submit_reg_account=document.getElementById('register_form_btn')
+console.log(submit_reg_account)
+document.getElementById('registrationForm').addEventListener('submit', function(event){
+    if((!validator.isAlphanumeric(user_account.value) || !validator.isLength(user_account.value, { min: 3, max: 30 })) ||  !validator.isLength(user_password.value, { min: 6 }) || !validator.equals(user_password.value, user_password_rewrite.value)){
+        event.preventDefault();
+    }
+
+})
+
 
 console.log(document.getElementById('registrationForm'))
 // Xử lý nhấp ra ngoài form
