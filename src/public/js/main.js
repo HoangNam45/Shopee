@@ -93,7 +93,13 @@ if(register_btn){
     register_btn.addEventListener("click", function() {
         modal.style.display = "flex";
         register.style.display = "block";
-        
+         user_account.value=''
+         user_password.value=''
+         user_password_rewrite.value=''
+    
+        document.getElementById('account_valid_text').innerHTML = '';
+        document.getElementById('password_valid_text').innerHTML = '';
+        document.getElementById('password_rewrite_valid_text').innerHTML = '';
     })
     
     change_to_log.addEventListener("click", function() {
@@ -106,6 +112,10 @@ if(register_btn){
         register.style.display = "none";
     })
 }
+
+
+
+
 //Validate form register
 const validator = require('validator')
 const user_account=document.getElementById('account')
@@ -116,7 +126,7 @@ const user_password_rewrite=document.getElementById('password_rewrite')
 function validateAccount(){
     const account=user_account.value
     if (!validator.isAlphanumeric(account) || !validator.isLength(account, { min: 3, max: 30 })) {
-        document.getElementById('account_valid_text').innerHTML = 'Tối thiểu 3 ký tự và tối đa 30 ký tự.';
+        document.getElementById('account_valid_text').innerHTML = 'Tài khoản không hợp lệ, tối thiểu 3 ký tự và tối đa 30 ký tự';
 
     }
     else {
@@ -145,27 +155,107 @@ function validatePasswordRewrite(){
 }
 
 user_account.addEventListener('blur', function () {
-    validateAccount()
+    validateAccount();
 });
+user_account.addEventListener('input', function(){
+    if(validator.isAlphanumeric(user_account.value) && validator.isLength(user_account.value, { min: 3, max: 30 })){
+        document.getElementById('account_valid_text').innerHTML = '';
+    }
+});
+
 
 user_password.addEventListener('blur', function () {
     validatePassword();
 });
+user_password.addEventListener('input', function(){
+    if (validator.isLength(user_password_rewrite.value, { min: 6 })) {
+        document.getElementById('password_valid_text').innerHTML = '';
+    }
+});
+
+
 user_password_rewrite.addEventListener('blur', function () {
     validatePasswordRewrite();
 });
+user_password.addEventListener('input', function(){
+    if (validator.equals(user_password.value, user_password_rewrite.value)) {
+        document.getElementById('password_rewrite_valid_text').innerHTML = '';
+    }
+});
+
 
 const submit_reg_account=document.getElementById('register_form_btn')
-console.log(submit_reg_account)
 document.getElementById('registrationForm').addEventListener('submit', function(event){
     if((!validator.isAlphanumeric(user_account.value) || !validator.isLength(user_account.value, { min: 3, max: 30 })) ||  !validator.isLength(user_password.value, { min: 6 }) || !validator.equals(user_password.value, user_password_rewrite.value)){
+        validateAccount();
+        validatePassword();
+        validatePasswordRewrite();
         event.preventDefault();
     }
 
 })
 
 
-console.log(document.getElementById('registrationForm'))
+
+// Validate form login
+const login_user_account=document.getElementById('login_account')
+const login_user_password=document.getElementById('login_password')
+
+function validateAccountLogin(){
+    if (!validator.isAlphanumeric(login_user_account.value) || !validator.isLength(login_user_account.value, { min: 3, max: 30 })) {
+        document.getElementById('login_account_valid_text').innerHTML = 'Tài khoản không hợp lệ, tối thiểu 3 ký tự và tối đa 30 ký tự';
+    }
+    else {
+        document.getElementById('login_account_valid_text').innerHTML = '';
+    }
+}
+function validatePasswordLogin(){
+    if (!validator.isLength(login_user_password.value, { min: 6 })) {
+        document.getElementById('login_password_valid_text').innerHTML = 'Mật khẩu phải có ít nhất 6 ký tự';
+
+    }
+    else {
+        document.getElementById('login_password_valid_text').innerHTML = '';
+    }
+}
+
+
+
+login_user_account.addEventListener('blur', function () {
+    validateAccountLogin();
+});
+login_user_account.addEventListener('input', function(){
+    if(validator.isAlphanumeric(login_user_account.value) && validator.isLength(login_user_account.value, { min: 3, max: 30 })){
+        document.getElementById('login_account_valid_text').innerHTML = '';
+    }
+});
+
+
+login_user_password.addEventListener('blur', function () {
+    validatePasswordLogin();
+});
+login_user_password.addEventListener('input', function(){
+    if (validator.isLength(login_user_password.value, { min: 6 })) {
+        document.getElementById('login_password_valid_text').innerHTML = '';
+    }
+});
+
+
+
+document.getElementById('loginForm').addEventListener('submit', function(event){
+    if((!validator.isAlphanumeric(login_user_account.value) || !validator.isLength(login_user_account.value, { min: 3, max: 30 })) ||  !validator.isLength(login_user_password.value, { min: 6 })){
+        validateAccountLogin();
+        validatePasswordLogin();
+        event.preventDefault();
+    }
+
+})
+
+
+
+
+
+
 // Xử lý nhấp ra ngoài form
 window.addEventListener("click", function (event) {
     if (event.target == modal_overlay ) {
