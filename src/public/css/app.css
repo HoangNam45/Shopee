@@ -622,7 +622,7 @@
 .category {
   background-color: #fff;
   border-radius: 2px;
-
+  
 }
 
 .category_heading-icon {
@@ -1251,4 +1251,8 @@
   background: #bbb9b8;
   color: #fff;
   cursor: default;
+}
+.error_valid_text{
+    color: #ff424f;
+    font-size: .9rem;
 }

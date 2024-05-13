@@ -1,0 +1,94 @@
+ <!-- MODAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA -->
+        <div id="tuilamodal" class="modal">
+            <div  id="tuilamodal_overlay" class="modal_overlay">
+
+            </div>
+            <div  class="modal_body">       
+                 <!-- REGISTER FORM   -->
+                 <form method="POST" action="/store" id="registrationForm"> 
+                 <div id="register" class="auth-form register">
+                    <div class="auth_form_container">
+                        <div class="auth_form_header">
+                            <h3  class="auth_heading">Đăng ký</h3>
+                            <span id="change_to_log" class="auth_switch">Đăng nhập</span>
+                        </div>
+                        <div class="auth_form_form">
+                            <div class="auth_form_group">
+                                <input type="text" class="auth_form_input" placeholder="Tài khoản của bạn" id="account" name="account" autocomplete="new-password">
+                                <span id="account_valid_text" class="error_valid_text"></span>
+                            </div>
+                            <div class="auth_form_group">
+                                <input type="password" class="auth_form_input" placeholder="Mật khẩu của bạn" id="password" name="password" autocomplete="new-password">
+                                <span id="password_valid_text" class="error_valid_text"></span>
+                            </div>
+                            <div class="auth_form_group">
+                                <input type="password" class="auth_form_input" placeholder="Nhập lại mật khẩu" id="password_rewrite" name="password_rewrite" autocomplete="off"> 
+                                <span id="password_rewrite_valid_text" class="error_valid_text"></span>
+                            </div>
+                        </div>
+                        <div class="authform_aside">
+                            <p class="auth_form_policy_text">Bằng việc đăng kí, bạn đã đồng ý với Shopee về
+                                <a href="" class="auth_form_policy_link">Điều khoản dịch vụ </a> 
+                                <a href="" class="auth_form_policy_link">Chính sách bảo mật</a>
+                            </p>
+                        </div>           
+                        <div class="auth_form_control">
+                            <button  id="tuiladeback_register" class="btn om btnac">TRỞ LẠI</button>
+                            <button type="submit" class="btn btn_primary" id="register_form_btn">ĐĂNG KÝ</button>
+                        </div>
+                    </div>
+                    <div class="auth_form_socials">
+                        <a href="" class="btn facebook nho btn_width_icon">
+                            <i class="fa-brands ha fa-square-facebook"></i>
+                            <span class="chhucu">Kết nối với Facebook</span>
+                        </a>
+                        <a href="" class="btn google nho btn_width_icon">
+                            <i class="fa-brands ha fa-google"></i>
+                            <span class="chhucu">Kết nối với Google</span>
+                        </a>
+                    </div>
+                </div> 
+                 </form>
+                <!-- LOGIN FORM -->
+                <form method="POST" action="/login" id="loginForm"> 
+                <div id="login"class="auth-form login">
+                    <div class="auth_form_container">
+                        <div class="auth_form_header">
+                            <h3 class="auth_heading">Đăng nhập</h3>
+                            <span id="change_to_reg" class="auth_switch">Đăng ký</span>
+                        </div>
+                        <div class="auth_form_form">
+                            <div class="auth_form_group">
+                                <input type="text" class="auth_form_input" placeholder="Tài khoản của bạn" name="account" autocomplete="new-password" id="login_account">
+                                <span id="login_account_valid_text" class="error_valid_text"></span>
+                            </div>
+                            <div class="auth_form_group">
+                                <input type="password" class="auth_form_input" placeholder="Mật khẩu của bạn" name="password" autocomplete="new-password" id="login_password">
+                                <span id="login_password_valid_text" class="error_valid_text"></span>
+                            </div>                          
+                        </div>
+                        <div class="authform_aside">
+                            <div class="helpme">
+                                <a href="" class="authform_help_link hach">Quên mật khẩu</a>
+                                <a href="" class="authform_help_link hallo">Cần trợ giúp?</a>
+                            </div>
+                        </div>           
+                        <div class="auth_form_control">
+                            <button id="tuiladeback_login" class="btn om btnac">TRỞ LẠI</button>
+                            <button class="btn btn_primary" id="log_form_btn">ĐĂNG NHẬP</button>
+                        </div>
+                    </div>
+                    <div class="auth_form_socials">
+                        <a href="" class="btn facebook nho btn_width_icon">
+                            <i class="fa-brands ha fa-square-facebook"></i>
+                            <span class="chhucu">Kết nối với Facebook</span>
+                        </a>
+                        <a href="" class="btn google nho btn_width_icon">
+                            <i class="fa-brands ha fa-google"></i>
+                            <span class="chhucu">Kết nối với Google</span>
+                        </a>
+                    </div>
+                </div>   
+            </div> 
+         </div>
+            </form>

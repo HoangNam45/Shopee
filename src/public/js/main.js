@@ -55,6 +55,25 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 });
+
+function clearFormLog(){
+    login_user_account.value=''
+    login_user_password.value=''
+    
+    document.getElementById('login_account_valid_text').innerHTML = '';
+    document.getElementById('login_password_valid_text').innerHTML = '';
+}
+function clearFormReg(){
+    user_account.value=''
+    user_password.value=''
+    
+    document.getElementById('account_valid_text').innerHTML = '';
+    document.getElementById('password_valid_text').innerHTML = '';
+    document.getElementById('password_rewrite_valid_text').innerHTML = '';
+}
+
+
+
 // Xử lý form login
 
 var modal= document.getElementById("tuilamodal");
@@ -68,12 +87,13 @@ if(login_btn) {
     login_btn.addEventListener("click", function() {
         modal.style.display = "flex";
         login.style.display = "block";
-        
+        clearFormLog()
     })
     
     change_to_reg.addEventListener("click", function() {
         login.style.display = "none";
         register.style.display = "block";
+        clearFormReg()
     })
     
     back_login.addEventListener("click", function() {
@@ -93,18 +113,13 @@ if(register_btn){
     register_btn.addEventListener("click", function() {
         modal.style.display = "flex";
         register.style.display = "block";
-         user_account.value=''
-         user_password.value=''
-         user_password_rewrite.value=''
-    
-        document.getElementById('account_valid_text').innerHTML = '';
-        document.getElementById('password_valid_text').innerHTML = '';
-        document.getElementById('password_rewrite_valid_text').innerHTML = '';
+        clearFormReg()
     })
     
     change_to_log.addEventListener("click", function() {
         register.style.display = "none";
         login.style.display = "block";
+        clearFormLog()
     })
     
     back_register.addEventListener("click", function() {
@@ -168,7 +183,7 @@ user_password.addEventListener('blur', function () {
     validatePassword();
 });
 user_password.addEventListener('input', function(){
-    if (validator.isLength(user_password_rewrite.value, { min: 6 })) {
+    if (validator.isLength(user_password.value, { min: 6 })) {
         document.getElementById('password_valid_text').innerHTML = '';
     }
 });
@@ -177,7 +192,7 @@ user_password.addEventListener('input', function(){
 user_password_rewrite.addEventListener('blur', function () {
     validatePasswordRewrite();
 });
-user_password.addEventListener('input', function(){
+user_password_rewrite.addEventListener('input', function(){
     if (validator.equals(user_password.value, user_password_rewrite.value)) {
         document.getElementById('password_rewrite_valid_text').innerHTML = '';
     }
