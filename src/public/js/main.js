@@ -265,7 +265,35 @@ document.getElementById('loginForm').addEventListener('submit', function(event){
     }
 
 })
-
+//Validate change password
+const recent_user_password=document.getElementById("recent_password")
+if(recent_user_password){
+    function validateRecentPassword(){
+        if (!validator.isLength(recent_user_password.value, { min: 1 })) {
+            document.getElementById('rec_password_valid_text').innerHTML = 'Vui lòng nhập mật khẩu';
+        }
+        else {
+            document.getElementById('rec_password_valid_text').innerHTML = '';
+        }
+    }
+    recent_user_password.addEventListener('blur', function () {
+        validateRecentPassword();
+    });
+    recent_user_password.addEventListener('input', function(){
+        if (validator.isLength(recent_user_password.value, { min: 1 })) {
+            document.getElementById('rec_password_valid_text').innerHTML = '';
+        }
+    });
+    document.getElementById('new_password_form').addEventListener('submit', function(event){
+        if(!validator.isLength(user_password.value, { min: 6 }) || !validator.equals(user_password.value, user_password_rewrite.value) || !validator.isLength(recent_user_password.value, { min: 1 })){
+            validateRecentPassword()
+            validatePassword();
+            validatePasswordRewrite();
+            event.preventDefault();
+        }
+    
+    })
+}
 
 
 
