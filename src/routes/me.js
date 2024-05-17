@@ -12,6 +12,7 @@ router.post('/update/avatar/edit', upload.single("image"),meController.edit_avat
 router.patch('/update/password/edit', new_password,meController.edit)
 router.get('/update/avatar', meController.update_avatar)
 router.get('/update/password', meController.update_password)
+router.get('/add/product', meController.add_product)
 
 
 module.exports = router

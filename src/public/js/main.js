@@ -328,6 +328,25 @@ window.addEventListener("click", function (event) {
             event.preventDefault(); // Ngăn chặn form được gửi
             file_input.click();
           });
-          console.log(file_input)
+    }
+//Xử lý upload ảnh sản phẩm
+const product_img_input = document.getElementById('product_img_input')
+    if(product_img_input){
+        product_img_input.addEventListener('change', function(event) {
+            // submit_avt_btn.removeEventListener('click', handleEvent)
+            // submit_avt_btn.style.cssText = "background: #ee4d2d; color: #fff;";
+            var file = event.target.files[0];
+            var reader = new FileReader();
+            reader.onload = function(e) {
+              document.getElementById('product_img_place').style.backgroundImage = "url(" + e.target.result + ")";
+              document.getElementById('product_upload_content').style.display ="none";
+            };
+            reader.readAsDataURL(file);
+          });
+          document.getElementById('product_img_place').addEventListener('click', function(event) {
+            event.preventDefault(); // Ngăn chặn form được gửi
+            product_img_input.click();
+          });
+          console.log(product_img_input)
     }
    

@@ -70,6 +70,18 @@ class MeController {
             .catch(err => res.status(500).json({ message: 'Có lỗi xảy ra ', error: err }));
     }
 
+
+    //[GET] /me/add/product
+    add_product(req, res) {
+        const data = {
+            account: req.session.account || null,
+            id: req.session.userId,
+            avatar: req.session.avatar
+        };
+        res.render('add_product', data);
+        
+    }
+
 }
 
 module.exports = new MeController();
