@@ -4,6 +4,7 @@ function validateUpdatePassword(password, old_password) {
     if (!validator.equals(password, old_password)) {
         errors.password = 'Mật khẩu hiện tại không trùng khớp với mật khẩu';
     }
+    return errors
 
 }
 

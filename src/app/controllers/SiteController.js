@@ -12,7 +12,7 @@ class SiteController {
     }
 
 
-    // [POST] /store
+    // [POST] store user
     store(req,res) {
 
         
@@ -23,7 +23,6 @@ class SiteController {
                 .then (() => res.redirect('/'))
                 .catch(error => {
                 })
-            console.log(user)
             res.redirect('/')
     }
 

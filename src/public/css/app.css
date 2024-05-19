@@ -1289,3 +1289,10 @@
   color: #ee4d2d;
   font-size: 1.4rem; 
 }
+.product_info{
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 22px;
+  color: #333;
+}
+    

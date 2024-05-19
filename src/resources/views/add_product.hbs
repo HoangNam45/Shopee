@@ -1,19 +1,34 @@
-{{!-- <form method="POST" action="/me/add/product/edit" enctype="multipart/form-data"> --}}
+<form method="POST" action="/me/add/product/store" enctype="multipart/form-data">
 <div class="layout_wrap">
-    <div>
-        {{!-- <h1>Thông tin sản phẩm</h1> --}}
-        <input type="file" name="image" accept="image/*" id="product_img_input" class="file_input">
-        <button class="product_img_place" id="product_img_place">
-            <div class="product_upload_content" id="product_upload_content">
-                <div class="product_upload_content_img">
-                    <i class="fa-regular fa-image add_product_img"></i>
-                </div>
-                <div class="product_upload_content_text">
-                    Thêm hình ảnh
-                </div>
-            </button>
+    <div class="avatar_inner">
+        <div>
+        <h1 class="product_info">Thông tin sản phẩm</h1>
+            <div>
+                <span>Hình ảnh sản phẩm</span>
+                <input type="file" name="product_img" accept="image/*" id="product_img_input" class="file_input">
+                <button class="product_img_place" id="product_img_place">
+                    <div class="product_upload_content" id="product_upload_content">
+                        <div class="product_upload_content_img">
+                            <i class="fa-regular fa-image add_product_img"></i>
+                        </div>
+                        <div class="product_upload_content_text">
+                            Thêm hình ảnh
+                        </div>
+                    </button>
+            </div>
+            <div>
+                <span>Tên sản phẩm</span>
+                <input type="text" autocomplete="new-password"  class="auth_form_input" name="product_name">
+            </div>
+            <div>
+                <span>Giá</span>
+                <input type="text" autocomplete="new-password"  class="auth_form_input" name="product_price">
+            </div>
+        </div>
+         <div class="submit_password">
+                <button type="submit" class="btn btn_primary">Xác nhận</button>
         </div>
     </div>
 </div>
 </div>
-{{!-- </form> --}}
+</form>

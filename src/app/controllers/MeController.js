@@ -1,4 +1,5 @@
 const User = require('../models/User');
+const Product = require('../models/Product')
 class MeController {
     //[GET] update UI
     update_password(req, res) {
@@ -81,6 +82,19 @@ class MeController {
         res.render('add_product', data);
         
     }
+
+    //[POST] /me/add/product/store
+    store_product(req,res) {
+        // Dữ liệu hợp lệ, xử lý đăng ký ở đây
+        const productData = req.body;
+        const product = new Product(productData)
+        product.save()
+            .then (() => res.json(req.body))
+            .catch(error => {
+            })
+        console.log(product)
+        res.json(req.body)
+}
 
 }
 
