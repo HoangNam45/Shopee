@@ -5,12 +5,13 @@ const router = express.Router()
 const meController = require("../app/controllers/MeController");
 
 const upload = require("../app/middlewares/UploadImg")
+const upload_product_img = require("../app/middlewares/UploadProductImg")
 const new_password = require("../app/middlewares/ValidatNewpass");
 
 
 router.post('/update/avatar/edit', upload.single("image"),meController.edit_avatar)
 router.patch('/update/password/edit', new_password,meController.edit)
-router.post('/add/product/store', meController.store_product)
+router.post('/add/product/store', upload_product_img.single("product_img"),meController.store_product)
 
 
 

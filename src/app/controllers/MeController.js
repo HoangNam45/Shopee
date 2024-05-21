@@ -8,7 +8,7 @@ class MeController {
             id: req.session.userId,
             avatar: req.session.avatar
         };
-        res.render('update_password', data);
+        res.render('update_password', { data });
         
     }
 
@@ -31,7 +31,7 @@ class MeController {
             avatar: req.session.avatar
         };
         
-        res.render('update_avatar', data);
+        res.render('update_avatar', { data });
     }
 
 
@@ -79,21 +79,25 @@ class MeController {
             id: req.session.userId,
             avatar: req.session.avatar
         };
-        res.render('add_product', data);
+        res.render('add_product', { data });
         
     }
 
     //[POST] /me/add/product/store
     store_product(req,res) {
+        const path = require('path');
         // Dữ liệu hợp lệ, xử lý đăng ký ở đây
+        function extractFileName(filePath) {
+            return path.basename(filePath);
+        }
+        const fileName = `/products_img/${extractFileName(req.file.path)}`;
+        req.body.product_img=fileName;
         const productData = req.body;
         const product = new Product(productData)
         product.save()
-            .then (() => res.json(req.body))
+            .then (() => res.redirect("/"))
             .catch(error => {
             })
-        console.log(product)
-        res.json(req.body)
 }
 
 }

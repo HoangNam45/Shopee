@@ -329,6 +329,12 @@ window.addEventListener("click", function (event) {
             file_input.click();
           });
     }
+
+
+
+
+
+
 //Xử lý upload ảnh sản phẩm
 const product_img_input = document.getElementById('product_img_input')
     if(product_img_input){

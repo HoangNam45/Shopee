@@ -1,14 +1,20 @@
 const User = require('../models/User')
-
+const Product = require('../models/Product')
 
 class SiteController {
     // [GET] /
-    home(req,res) {
+    home(req,res, next) {
         const data = {
             account: req.session.account || null,
             avatar: req.session.avatar
         };
-        res.render('home', data)
+        Product.find({})
+            .then(products => {
+                products = products.map(product => product.toObject())
+                res.render('home', { products, data })
+            })
+            .catch(next)
+        
     }
 
 
