@@ -344,8 +344,15 @@ const product_img_input = document.getElementById('product_img_input')
             var file = event.target.files[0];
             var reader = new FileReader();
             reader.onload = function(e) {
-              document.getElementById('product_img_place').style.backgroundImage = "url(" + e.target.result + ")";
-              document.getElementById('product_upload_content_above').style.display ="none";
+                const product_img_place=document.getElementById('product_img_place')
+                product_img_place.style.backgroundImage = "url(" + e.target.result + ")";
+                document.getElementById('product_upload_content_above').style.display ="none";
+                product_img_place.addEventListener("mouseover", function(){
+                    document.getElementById('delete_product_img').style.display="flex"
+                })
+                product_img_place.addEventListener("mouseout", function(){
+                    document.getElementById('delete_product_img').style.display="none"
+                })
             };
             reader.readAsDataURL(file);
           });
