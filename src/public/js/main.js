@@ -347,6 +347,12 @@ const product_img_input = document.getElementById('product_img_input')
                 const product_img_place=document.getElementById('product_img_place')
                 product_img_place.style.backgroundImage = "url(" + e.target.result + ")";
                 document.getElementById('product_upload_content_above').style.display ="none";
+                document.getElementById('delete_product_img').addEventListener("mouseover", function(){
+                    document.getElementById('delete_product_img').style.display="flex"
+                })
+                document.getElementById('delete_product_img').addEventListener("mouseout", function(){
+                    document.getElementById('delete_product_img').style.display="none"
+                })
                 product_img_place.addEventListener("mouseover", function(){
                     document.getElementById('delete_product_img').style.display="flex"
                 })
