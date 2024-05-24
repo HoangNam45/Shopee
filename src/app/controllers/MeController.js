@@ -91,6 +91,7 @@ class MeController {
             return path.basename(filePath);
         }
         const fileName = `/products_img/${extractFileName(req.file.path)}`;
+        req.body.seller_id=req.session.userId
         req.body.product_img=fileName;
         const productData = req.body;
         const product = new Product(productData)

@@ -345,7 +345,7 @@ const product_img_input = document.getElementById('product_img_input')
             var reader = new FileReader();
             reader.onload = function(e) {
               document.getElementById('product_img_place').style.backgroundImage = "url(" + e.target.result + ")";
-              document.getElementById('product_upload_content').style.display ="none";
+              document.getElementById('product_upload_content_above').style.display ="none";
             };
             reader.readAsDataURL(file);
           });
