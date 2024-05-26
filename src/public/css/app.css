@@ -1325,21 +1325,25 @@
   margin-bottom: 16px;
 }
 .delete_product_img{
-  width: 24px;
   background-color: rgba(0, 0, 0, 0.25);
   position: absolute;
   bottom: 0;
+  height: 21px;
   width: 100%;
   display: none;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  cursor: pointer;
+  
 }
 .product_img_wrap:hover ~ .delete_product_img{
   display: block;
 }
 .trash-can{
   color: #fff;
+  font-size: 0.85rem;
+  padding: 2px 8px;
+  cursor: pointer;
 }
+
   

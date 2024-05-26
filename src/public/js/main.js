@@ -345,20 +345,40 @@ const product_img_input = document.getElementById('product_img_input')
             var reader = new FileReader();
             reader.onload = function(e) {
                 const product_img_place=document.getElementById('product_img_place')
+                const clearProductImg=document.getElementById('delete_product_img')
+
                 product_img_place.style.backgroundImage = "url(" + e.target.result + ")";
                 document.getElementById('product_upload_content_above').style.display ="none";
-                document.getElementById('delete_product_img').addEventListener("mouseover", function(){
-                    document.getElementById('delete_product_img').style.display="flex"
+
+
+                clearProductImg.addEventListener("mouseover", function(){
+                    clearProductImg.style.display="flex"
                 })
-                document.getElementById('delete_product_img').addEventListener("mouseout", function(){
-                    document.getElementById('delete_product_img').style.display="none"
+                clearProductImg.addEventListener("mouseout", function(){
+                    clearProductImg.style.display="none"
                 })
+
+
                 product_img_place.addEventListener("mouseover", function(){
-                    document.getElementById('delete_product_img').style.display="flex"
+                    clearProductImg.style.display="flex"
                 })
                 product_img_place.addEventListener("mouseout", function(){
-                    document.getElementById('delete_product_img').style.display="none"
+                    clearProductImg.style.display="none"
                 })
+                
+
+                
+                document.getElementById('trash-can').addEventListener("click", function() {
+                    product_img_input.value="";
+                    document.getElementById('product_upload_content_above').style.display ="block";
+                    clearProductImg.style.display='none';
+                    product_img_place.addEventListener("mouseover", function(){
+                        clearProductImg.style.display="none"
+                    })
+                    product_img_place.style.backgroundImage = "";
+                    
+                }); 
+                
             };
             reader.readAsDataURL(file);
           });
@@ -366,6 +386,7 @@ const product_img_input = document.getElementById('product_img_input')
             event.preventDefault(); // Ngăn chặn form được gửi
             product_img_input.click();
           });
-          console.log(product_img_input)
+
+        
     }
    
