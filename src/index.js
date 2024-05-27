@@ -24,9 +24,16 @@ db.connect();
 // Setup handlebar(template engine)
 app.use(methodOverride('_method'))
 const handlebars = require('express-handlebars')
-app.engine('hbs', handlebars.engine({
-    extname: '.hbs'
-}));
+const hbs = handlebars.create({
+    // Đăng ký helper
+    helpers: {
+        formatCurrency: function (number) {
+            return new Intl.NumberFormat('vi-VN').format(number);
+        }
+    },
+    extname: '.hbs' // Phần mở rộng cho file template
+});
+app.engine('hbs', hbs.engine);
 app.set('view engine', 'hbs');
 app.set('views', path.join(__dirname, 'resources/views'));
 //

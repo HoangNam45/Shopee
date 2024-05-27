@@ -183,7 +183,7 @@
                                         <h4 class="nameofpr">{{this.product_name}}</h4>
                                         <div class="product-text">
                                             {{!-- <span class="price_old">115.000đ</span> --}}
-                                            <span class="price_new">{{this.product_price}}đ</span>
+                                            <span class="price_new">{{formatCurrency this.product_price}}đ</span>
                                         </div>
                                         <div class="product_interact">
                                             <span class="product-like product-like--liked">
@@ -205,9 +205,9 @@
                                             <i class="fa-solid fa-check"></i>
                                             <span class="">Yêu thích</span>
                                         </div>
-                                        <div class="product_sale">
+                                        {{!-- <div class="product_sale">
                                             <span class="value">-10%</span>
-                                        </div>
+                                        </div> --}}
                                     </a>
                                 </div>
                                 {{/each}}

@@ -8,7 +8,7 @@ const Product = new Schema({
     seller_id: { type: String },
     product_img: { type: String },
     product_name: { type: String, minLength: 1, required: true },
-    product_price: { type: String, minLength: 1, required: true },
+    product_price: { type: Number, minLength: 1, required: true },
     slug: { type: String, slug: 'product_name', unique: true },
 }, {
     timestamps: true,

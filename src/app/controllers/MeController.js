@@ -1,5 +1,6 @@
 const User = require('../models/User');
 const Product = require('../models/Product')
+const path = require('path');
 class MeController {
     //[GET] update UI
     update_password(req, res) {
@@ -39,7 +40,7 @@ class MeController {
     //[POST] /me/update/avatar/edit
     edit_avatar=  function(req,res) {
         const fs = require('fs');
-        const path = require('path');
+        
         const data = {
             account: req.session.account || null,
             id: req.session.userId,
@@ -85,14 +86,14 @@ class MeController {
 
     //[POST] /me/add/product/store
     store_product(req,res) {
-        const path = require('path');
         // Dữ liệu hợp lệ, xử lý đăng ký ở đây
         function extractFileName(filePath) {
             return path.basename(filePath);
         }
+
         const fileName = `/products_img/${extractFileName(req.file.path)}`;
-        req.body.seller_id=req.session.userId
         req.body.product_img=fileName;
+        req.body.seller_id=req.session.userId
         const productData = req.body;
         const product = new Product(productData)
         product.save()
