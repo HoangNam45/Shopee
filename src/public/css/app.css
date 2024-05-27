@@ -1402,3 +1402,19 @@
   color: #767676;
   font-size: 18px;
 }
+.product_sell_detail_price_wrap{
+  display: flex;
+  width: 665px;
+  height: 66px;
+  align-items: center;
+  background: #fafafa;
+}
+.product_sell_detail_price{
+  margin: 15px 20px;
+  color: #d0011b;
+  font-size: 1.78rem;
+  font-weight: 500;
+}
+.product_sell_detail_amout_wrap{
+  display: flex;
+}
