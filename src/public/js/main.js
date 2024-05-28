@@ -389,4 +389,31 @@ const product_img_input = document.getElementById('product_img_input')
 
         
     }
-   
+
+const control_product_quantity=document.getElementById('control_product_quantity')
+   if(control_product_quantity){
+    const increase_product_quantity=document.getElementById('increase_product_quantity') 
+    const decrease_product_quantity=document.getElementById('decrease_product_quantity')
+
+    increase_product_quantity.addEventListener("click", function() {
+        control_product_quantity.value = parseInt(control_product_quantity.value) + 1;
+    })
+    
+    decrease_product_quantity.addEventListener("click", function() {
+        if(control_product_quantity.value>1){
+            control_product_quantity.value = control_product_quantity.value - 1;
+        }
+    })
+    control_product_quantity.addEventListener('keypress', function(event) {
+        const allowedKeys = ['1', '2', '3', '4', '5', '6', '7', '8', '9'];
+        if (!allowedKeys.includes(event.key)) {
+                event.preventDefault();
+        }
+    });
+    control_product_quantity.addEventListener('blur', function() {
+        if (control_product_quantity.value.trim() === '') {
+            control_product_quantity.value = '1';
+        }
+    });
+    
+   }

@@ -1418,3 +1418,35 @@
 .product_sell_detail_amout_wrap{
   display: flex;
 }
+.product_sell_detail_amout_controller_wrap{
+  display: flex;
+}
+.product_sell_detail_amout{
+  display: flex;
+}
+.adjust_quantity_btn{
+    align-items: center;
+    background: transparent;
+    border: 0;
+    border: 1px solid rgba(0, 0, 0, .09);
+    border-radius: 2px;
+    color: rgba(0, 0, 0, .8);
+    cursor: pointer;
+    display: flex;
+    font-size: .875rem;
+    font-weight: 300;
+    height: 32px;
+    justify-content: center;
+    line-height: 1;
+    outline: none;
+    width: 32px;
+}
+.adjust_quantity_input{
+    box-sizing: border-box;
+    cursor: text;
+    font-size: 16px;
+    font-weight: 400;
+    height: 32px;
+    text-align: center;
+    width: 50px;
+}
