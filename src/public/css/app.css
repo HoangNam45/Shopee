@@ -1386,6 +1386,9 @@
   /* height: 100%; */
 }
 .product_sell_detail_wrap{
+  justify-content: space-between;
+  display: flex;
+  flex-direction: column;
   margin: 15px;
   flex:1
 }
@@ -1471,10 +1474,15 @@
 
 .product_sell_button_group{
   display: flex;
+  margin-top: 30px;
 }
 .btn_buy{
   background: rgba(208, 1, 27, .08);
   border: 1px solid #fe6433;
   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .03);
   color: #fe6433;
+}
+.add_product_cart{
+  margin-right: 15px;
+  
 }

@@ -2,50 +2,52 @@
     <div class="product_inner">
         <div class="product_sell_wrap">
             <div class="product_sell_img_wrap">
-                <img src="/products_img/1716782325711.jpg" alt="" class="product_sell_img">
+                <img src="{{product.product_img}}" alt="" class="product_sell_img">
             </div>
             <div class="product_sell_detail_wrap">
 
-                
-                <div>
-                    <img src="https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg/productdetailspage/40a453875daccf8cc324.svg" alt="">
-                    <span class="product_sell_detail_name">Truyện -Thiên sứ nhà bên</span>
-                </div>
-                <div class="product_sell_detail_evaluate">
-                    <span class="product_sell_detail_evaluat_text">Chưa có đánh giá</span>
-                </div>
-                <div class="product_sell_detail_price_wrap">
-                    <span class="product_sell_detail_price">95.000đ</span>
-                </div>
-
-
-                <div class="product_sell_detail_amout_wrap">
-                    <span class="product_sell_detail_amout_text">Số lượng</span>
-                    <div class="product_sell_detail_amout_controller_wrap">
-                        <div class="product_sell_detail_amout_controller">
-                            <div class="product_sell_detail_amout"> 
-                                <button class="adjust_quantity_btn" id="decrease_product_quantity">
-                                    <i class="fa-solid fa-minus"></i>
-                                </button>
-                                <input type="text" class="adjust_quantity_input adjust_quantity_btn" value="1" id="control_product_quantity">
-                                <button class="adjust_quantity_btn" id="increase_product_quantity">
-                                    <i class="fa-solid fa-plus"></i>
-                                </button>
-                            </div>
-                        </div>
-                        <div class="product_sell_quantity_left">
-                            8 sản phẩm
-                        </div>
+                <div class="product_sell_above">
+                    <div>
+                        <img src="https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg/productdetailspage/40a453875daccf8cc324.svg" alt="">
+                        <span class="product_sell_detail_name">{{product.product_name}}</span>
+                    </div>
+                    <div class="product_sell_detail_evaluate">
+                        <span class="product_sell_detail_evaluat_text">Chưa có đánh giá</span>
+                    </div>
+                    <div class="product_sell_detail_price_wrap">
+                        <span class="product_sell_detail_price">{{product.product_price}}đ</span>
                     </div>
                 </div>
 
+                <div class="product_sell_under">
+                    <div class="product_sell_detail_amout_wrap">
+                        <span class="product_sell_detail_amout_text">Số lượng</span>
+                        <div class="product_sell_detail_amout_controller_wrap">
+                            <div class="product_sell_detail_amout_controller">
+                                <div class="product_sell_detail_amout"> 
+                                    <button class="adjust_quantity_btn" id="decrease_product_quantity">
+                                        <i class="fa-solid fa-minus"></i>
+                                    </button>
+                                    <input type="text" class="adjust_quantity_input adjust_quantity_btn" value="1" id="control_product_quantity">
+                                    <button class="adjust_quantity_btn" id="increase_product_quantity">
+                                        <i class="fa-solid fa-plus"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="product_sell_quantity_left">
+                                8 sản phẩm
+                            </div>
+                        </div>
+                    </div>
 
-                <div class="product_sell_button_group">
-                    <button class="bt btn_buy">
-                        <i class="fa-solid fa-cart-shopping"></i>
-                        <span>Thêm vào giỏ hàng</span>
-                    </button>
-                    <button class="btn btn_primary">Mua ngay</button>
+
+                    <div class="product_sell_button_group">
+                        <button class="btn btn_buy add_product_cart">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                            <span>Thêm vào giỏ hàng</span>
+                        </button>
+                        <button class="btn btn_primary">Mua ngay</button>
+                    </div>
                 </div>
 
 
