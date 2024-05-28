@@ -1417,9 +1417,15 @@
 }
 .product_sell_detail_amout_wrap{
   display: flex;
+  align-items: center;
 }
 .product_sell_detail_amout_controller_wrap{
   display: flex;
+  align-items: center;
+ 
+}
+.product_sell_detail_amout_controller{
+  margin-right: 15px;
 }
 .product_sell_detail_amout{
   display: flex;
@@ -1449,4 +1455,26 @@
     height: 32px;
     text-align: center;
     width: 50px;
+}
+.product_sell_detail_amout_text{
+  color: #757575;
+  
+  width: 110px;
+  font-weight: 400;
+  font-size: 16.5px;
+}
+.product_sell_quantity_left{
+  color: #757575;
+
+}
+
+
+.product_sell_button_group{
+  display: flex;
+}
+.btn_buy{
+  background: rgba(208, 1, 27, .08);
+  border: 1px solid #fe6433;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .03);
+  color: #fe6433;
 }
