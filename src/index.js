@@ -30,6 +30,11 @@ const hbs = handlebars.create({
         formatCurrency: function (number) {
             return new Intl.NumberFormat('vi-VN').format(number);
         }
+        
+    },
+    runtimeOptions: {
+        allowProtoPropertiesByDefault: true,
+        allowProtoMethodsByDefault: true,
     },
     extname: '.hbs' // Phần mở rộng cho file template
 });

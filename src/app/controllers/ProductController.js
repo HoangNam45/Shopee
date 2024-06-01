@@ -4,6 +4,7 @@ class ProducController {
     product_info(req,res, next) {
         Product.findOne({slug: req.params.slug})
             .then(product => {
+                console.log(product)
                 res.render("product", {product})
             })
             .catch(next);
