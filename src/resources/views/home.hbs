@@ -61,7 +61,7 @@
                         </div>
                         <div class="home_product">
                             <div class="row">
-                                <div class="col l-2-4 m-4 c-6">
+                                {{!-- <div class="col l-2-4 m-4 c-6">
                                     <a class="home_product-item" href="https://shopee.vn/S%C3%A1ch-B%E1%BA%A3o-m%E1%BA%ABu-b%C3%AD-m%E1%BA%ADt-c%E1%BB%A7a-ti%E1%BB%83u-th%C6%B0-t%E1%BA%ADp-1-i.40470612.20995650444?sp_atk=d2ebc04d-1520-4bc3-b8b9-41c1914f900d&xptdk=d2ebc04d-1520-4bc3-b8b9-41c1914f900d">
                                         <div class="square">
                                             <img width="invalid-value" height="invalid-value" alt="Sách - Bảo mẫu bí mật của tiểu thư tập 1" class="product_item-img" style="object-fit: contain" src="https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-low5qzocvgbf42_tn">
@@ -158,13 +158,13 @@
                                         <div class="product-sell">
                                             <span class="agugu">Đã bán 1,2k</span>
                                         </div>
-                                        {{!-- <div class="favourite">
+                                         <div class="favourite">
                                             <i class="fa-solid fa-check"></i>
                                             <span class="">Yêu thích</span>
-                                        </div> --}}
+                                        </div> 
                         
                                     </a>
-                                </div>
+                                </div> --}}
 
 
 
@@ -563,12 +563,30 @@
                             </div>
                         </div>
                         <ul class="pagination home_product_pagination">
-                            <li class="pagination-item">
-                                <a href="" class="pagination-item_link">
-                                    <i class="fa-solid fa-chevron-left pagination-item_link-icon"></i>
-                                </a>
-                            </li>
-                            <li class="pagination-item pagination-item_active">
+                            {{#if (gt current 1)}}
+                                <li class="pagination-item">
+                                    <a href="/?page={{subtract current 1}}" class="pagination-item_link">
+                                        <i class="fa-solid fa-chevron-left pagination-item_link-icon"></i>
+                                    </a>
+                                </li>
+                            {{/if}}
+                                
+                            {{#each (range 1 pages)}}
+                                <li class="pagination-item">
+                                    <a href="/?page={{this}}" class="pagination-item_link {{#if (eq ../current this)}}current_page{{/if}}">
+                                        {{this}}
+                                    </a>
+                                </li>
+                            {{/each}}
+
+                            {{#if (lt current pages)}}
+                                <li class="pagination-item">
+                                    <a href="/?page={{add current 1}}" class="pagination-item_link">
+                                        <i class="fa-solid fa-chevron-right pagination-item_link-icon"></i>
+                                    </a>
+                                </li>
+                            {{/if}}
+                            {{!-- <li class="pagination-item pagination-item_active">
                                 <a href="" class="pagination-item_link ">
                                     1
                                 </a>
@@ -602,12 +620,8 @@
                                 <a href="" class="pagination-item_link">
                                     14
                                 </a>
-                            </li>
-                            <li class="pagination-item">
-                                <a href="" class="pagination-item_link">
-                                    <i class="fa-solid fa-chevron-right pagination-item_link-icon"></i>
-                                </a>
-                            </li>
+                            </li> --}}
+                            
                         </ul>
                     </div>
                 </div>

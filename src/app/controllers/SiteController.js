@@ -3,17 +3,36 @@ const Product = require('../models/Product')
 
 class SiteController {
     // [GET] /
-    home(req,res, next) {
+    home = async function(req,res, next) {
         const data = {
             account: req.session.account || null,
             avatar: req.session.avatar
         };
-        Product.find({})
-            .then(products => {
-                products = products.map(product => product.toObject())
-                res.render('home', { products, data })
-            })
-            .catch(next)
+        // Product.find({}
+        //     .then(products => {
+        //         products = products.map(product => product.toObject())
+        //         res.render('home', { products, data })
+        //     })
+        //     .catch(next)
+    const perPage = 1; // Số lượng sản phẩm trên mỗi trang
+    const page = parseInt(req.query.page) || 1; // Trang hiện tại, mặc định là trang 1
+
+    try {
+        const products = await Product.find({})
+            .skip((perPage * page) - perPage)
+            .limit(perPage);
+
+        const count = await Product.countDocuments();
+
+        res.render('home', {
+            data,
+            products,
+            current: page,
+            pages: Math.ceil(count / perPage)
+        });
+    } catch (err) {
+        res.status(500).send(err);
+    }
         
     }
 

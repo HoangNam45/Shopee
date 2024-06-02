@@ -29,7 +29,19 @@ const hbs = handlebars.create({
     helpers: {
         formatCurrency: function (number) {
             return new Intl.NumberFormat('vi-VN').format(number);
-        }
+        },
+        add: (a, b) => a + b,
+        subtract: (a, b) => a - b,
+        range: (from, to) => {
+            const range = [];
+            for (let i = from; i <= to; i++) {
+                range.push(i);
+            }
+            return range;
+        },
+        gt: (a, b) => a > b,
+        lt: (a, b) => a < b,
+        eq: (a, b) => a===b,
         
     },
     runtimeOptions: {
@@ -37,6 +49,7 @@ const hbs = handlebars.create({
         allowProtoMethodsByDefault: true,
     },
     extname: '.hbs' // Phần mở rộng cho file template
+    
 });
 app.engine('hbs', hbs.engine);
 app.set('view engine', 'hbs');
