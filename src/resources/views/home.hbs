@@ -573,7 +573,7 @@
                                 
                             {{#each (range 1 pages)}}
                                 <li class="pagination-item">
-                                    <a href="/?page={{this}}" class="pagination-item_link {{#if (eq ../current this)}}current_page{{/if}}">
+                                    <a href="/?page={{this}}" class="pagination-item_link" {{#if (eq ../current this) }}id="current_page"{{/if}}>
                                         {{this}}
                                     </a>
                                 </li>
