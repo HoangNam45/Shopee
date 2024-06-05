@@ -14,7 +14,7 @@ class SiteController {
         //         res.render('home', { products, data })
         //     })
         //     .catch(next)
-    const perPage = 10; // Số lượng sản phẩm trên mỗi trang
+    const perPage = 5; // Số lượng sản phẩm trên mỗi trang
     const page = parseInt(req.query.page) || 1; // Trang hiện tại, mặc định là trang 1
 
     try {

@@ -429,13 +429,33 @@ const control_product_quantity=document.getElementById('control_product_quantity
             fetch(`http://localhost:5000/search?q=${query}`)
                 .then(response => response.json())
                 .then(data => {
-                    console.log(data)
+
+                    //Xử lý case product trùng tên
+                    var newSize=0;
+                    var result=[]
+                    for (var i=0; i<data.length; i++){
+                        var isDuplicate=0;
+                        for (var j=0; j<newSize; j++){
+                            if(data[i].product_name==result[j]){
+                                isDuplicate=1;
+                                break
+                            }
+                        }
+                        if(!isDuplicate){
+                            result[i]=data[i].product_name
+                            newSize++
+                        }
+                    }
+                    
+                    product_result=result.slice(0,6)
                     const product_suggestion = document.getElementById('product_suggestion');
                     product_suggestion.innerHTML = '';
-                    data.forEach(product => {
+                    product_result.forEach(product => {
                         const li = document.createElement('li');
-                        li.textContent = product.product_name;
+                        const a = document.createElement('a');
+                        a.textContent = product;
                         li.classList.add('history_item')
+                        li.appendChild(a);
                         product_suggestion.appendChild(li);
                     });
                 })
