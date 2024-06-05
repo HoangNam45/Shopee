@@ -92,6 +92,21 @@ class SiteController {
             
         } 
     }
+
+    search = async function(req,res) {
+        try {
+            const searchTerm = req.query.q;
+            if (!searchTerm) {
+                return res.status(400).send('Query parameter q is required');
+            }
+    
+            // Tìm kiếm sản phẩm dựa trên tên (case-insensitive)
+            const products = await Product.find({ product_name: { $regex: searchTerm, $options: 'i' } });
+            res.json(products);
+        } catch (error) {
+            res.status(500).send(error.message);
+        }
+    }
     
 }
 module.exports = new SiteController

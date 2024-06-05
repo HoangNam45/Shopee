@@ -129,21 +129,29 @@
                             <i class="fa-solid fa-x"></i>
                             <input type="checkbox" hidden   id="mobile-search-close" class="header__search-close">
                         </label>
+
+
+
+
                         <div class="div_wrap">
-                            <input type="text"  class="timkiemtrongtimkiem" placeholder="Nhập để tìm kiếm sản phẩm">
+                            <input type="text"  class="timkiemtrongtimkiem" id="search_product_input" placeholder="Nhập để tìm kiếm sản phẩm">
                             <!-- SEARCH HISTORY -->
                             <div class="search_history">
-                                <h3 class="history_elements">Lịch sử tìm kiếm</h3>
-                                <ul class="history_search_elements">
-                                    <li class="history_item">
+                                {{!-- <h3 class="history_elements">Lịch sử tìm kiếm</h3> --}}
+                                <ul class="history_search_elements" id="product_suggestion">
+                                    {{!-- <li class="history_item">
                                         <a href="uaalo">Arya xinh vaiii</a>
                                     </li>
                                     <li class="history_item">
                                         <a href="aloalo">Toi bi ngu</a>
-                                    </li>
+                                    </li> --}}
                                 </ul>
                             </div>           
                         </div>
+
+
+
+
                         <div class="timkiemselecttion">
                             <span class="select_label">Trong shop</span>
                             <i class="fa-solid select_icon fa-arrow-down"></i>

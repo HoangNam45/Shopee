@@ -417,3 +417,30 @@ const control_product_quantity=document.getElementById('control_product_quantity
     });
     
    }
+
+
+
+
+
+    const search_product =  document.getElementById('search_product_input')
+    search_product.addEventListener('input', function(){
+        const query = this.value;
+        if (query.length > 0) {
+            fetch(`http://localhost:5000/search?q=${query}`)
+                .then(response => response.json())
+                .then(data => {
+                    console.log(data)
+                    const product_suggestion = document.getElementById('product_suggestion');
+                    product_suggestion.innerHTML = '';
+                    data.forEach(product => {
+                        const li = document.createElement('li');
+                        li.textContent = product.product_name;
+                        li.classList.add('history_item')
+                        product_suggestion.appendChild(li);
+                    });
+                })
+                .catch(error => console.error('Error fetching data:', error));
+        } else {
+            document.getElementById('product_suggestion').innerHTML = '';
+        }
+    })
