@@ -463,4 +463,15 @@ const control_product_quantity=document.getElementById('control_product_quantity
         } else {
             document.getElementById('product_suggestion').innerHTML = '';
         }
+
     })
+
+
+
+
+const find_product_form=document.getElementById("find_product_form")
+find_product_form.addEventListener('submit', function(e){
+    e.preventDefault();
+    const query=search_product.value;
+    window.location.href = `/search_product?q=${encodeURIComponent(query)}`;
+})

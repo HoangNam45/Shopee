@@ -107,6 +107,49 @@ class SiteController {
             res.status(500).send(error.message);
         }
     }
+    search_product = async function(req,res){
+        try {
+            const data = {
+                account: req.session.account || null,
+                avatar: req.session.avatar
+            };
+            const searchTerm = req.query.q;
+            if (!searchTerm) {
+                return res.status(400).send('Query parameter q is required');
+            }
+
+            const page = parseInt(req.query.page) || 1; // Trang hiện tại, mặc định là trang 1
+            const perPage = 5; // Số lượng sản phẩm trên mỗi trang
+            // Tìm kiếm sản phẩm dựa trên tên (case-insensitive)
+            const products = await Product.find({ product_name: { $regex: searchTerm, $options: 'i' } })
+                .skip((perPage * page) - perPage)
+                .limit(perPage);
+            
+            
+            const count = await Product.countDocuments({ product_name: { $regex: searchTerm, $options: 'i' } });
+            res.render('home', {
+                data,
+                products,
+                current: page,
+                pages: Math.ceil(count / perPage)
+            });
+        } catch (error) {
+            res.status(500).send(error.message);
+        }
+
+
+
+       
+        // Product.find({}
+        //     .then(products => {
+        //         products = products.map(product => product.toObject())
+        //         res.render('home', { products, data })
+        //     })
+        //     .catch(next)
     
+
+  
+        
+    }    
 }
 module.exports = new SiteController

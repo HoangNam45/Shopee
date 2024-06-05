@@ -108,6 +108,7 @@
                     
                 </ul>
                 </nav>
+                <form id="find_product_form"> 
                 <div class="header_search">
                     <div class="khongbietgoilagi">
                         <label id="menuIcon" class="header_menu" for="nav-mobile-input">
@@ -132,43 +133,46 @@
 
 
 
+                        
+                            <div class="div_wrap">
+                                <input type="text"  class="timkiemtrongtimkiem" id="search_product_input" placeholder="Nhập để tìm kiếm sản phẩm" >
+                                <!-- SEARCH HISTORY -->
+                                <div class="search_history">
+                                    {{!-- <h3 class="history_elements">Lịch sử tìm kiếm</h3> --}}
+                                    <ul class="history_search_elements" id="product_suggestion">
+                                        {{!-- <li class="history_item">
+                                            <a href="uaalo">Arya xinh vaiii</a>
+                                        </li>
+                                        <li class="history_item">
+                                            <a href="aloalo">Toi bi ngu</a>
+                                        </li> --}}
+                                    </ul>
+                                </div>           
+                            </div>
 
-                        <div class="div_wrap">
-                            <input type="text"  class="timkiemtrongtimkiem" id="search_product_input" placeholder="Nhập để tìm kiếm sản phẩm">
-                            <!-- SEARCH HISTORY -->
-                            <div class="search_history">
-                                {{!-- <h3 class="history_elements">Lịch sử tìm kiếm</h3> --}}
-                                <ul class="history_search_elements" id="product_suggestion">
-                                    {{!-- <li class="history_item">
-                                        <a href="uaalo">Arya xinh vaiii</a>
+
+
+
+                            <div class="timkiemselecttion">
+                                <span class="select_label">Trong shop</span>
+                                <i class="fa-solid select_icon fa-arrow-down"></i>
+                                <ul class="tuilaoption">
+                                    <li class="option_item active">
+                                        <span class="option_item_lable">Trong shop</span>
+                                        <i class="fa-solid fa-check"></i>
                                     </li>
-                                    <li class="history_item">
-                                        <a href="aloalo">Toi bi ngu</a>
-                                    </li> --}}
+                                    <li class="option_item ">
+                                        <span class="option_item_lable">Ngoài shop</span>
+                                        <i class="fa-solid fa-check"></i>
+                                    </li>
                                 </ul>
-                            </div>           
-                        </div>
+                            </div>
+                            <buttn class="search_btn">
+                                <i class="fa-solid search_icon_bt fa-magnifying-glass"></i>
+                            </buttn>
+                        
 
 
-
-
-                        <div class="timkiemselecttion">
-                            <span class="select_label">Trong shop</span>
-                            <i class="fa-solid select_icon fa-arrow-down"></i>
-                            <ul class="tuilaoption">
-                                <li class="option_item active">
-                                    <span class="option_item_lable">Trong shop</span>
-                                    <i class="fa-solid fa-check"></i>
-                                </li>
-                                <li class="option_item ">
-                                    <span class="option_item_lable">Ngoài shop</span>
-                                    <i class="fa-solid fa-check"></i>
-                                </li>
-                            </ul>
-                        </div>
-                        <buttn class="search_btn">
-                            <i class="fa-solid search_icon_bt fa-magnifying-glass"></i>
-                        </buttn>
                     </div>
                     <!-- CART LAYOUT -->
                     <div class="header_giohang">
@@ -183,6 +187,7 @@
                         </div>
                     </div>
                 </div>
+                </form>
             </div>
             <ul class="header_sort-bar">
                 <li class="header_sort-item">
