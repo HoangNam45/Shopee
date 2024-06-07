@@ -27,6 +27,17 @@
                         </nav>
                     </div>
                     <div class="col l-10 m-12 c-12 ">
+                        {{#if searchTerm}}
+                        <h1 class="search_result_text">
+                            <i class="fa-solid fa-magnifying-glass search_result_text_icon"></i>
+                            <span>
+                                Kết quả tìm kiếm cho 
+                                <span style="color: #fe6433;">
+                                    "{{searchTerm}}"
+                                </span>
+                            </span>
+                        </h1>
+                        {{/if}}
                         <div class="home-filter hide-on-mobile-tablet">
                             <span class="home-text">Sắp xếp theo</span>
                             <button class="home_btn btn">Phổ biến</button>
@@ -61,110 +72,7 @@
                         </div>
                         <div class="home_product">
                             <div class="row">
-                                {{!-- <div class="col l-2-4 m-4 c-6">
-                                    <a class="home_product-item" href="https://shopee.vn/S%C3%A1ch-B%E1%BA%A3o-m%E1%BA%ABu-b%C3%AD-m%E1%BA%ADt-c%E1%BB%A7a-ti%E1%BB%83u-th%C6%B0-t%E1%BA%ADp-1-i.40470612.20995650444?sp_atk=d2ebc04d-1520-4bc3-b8b9-41c1914f900d&xptdk=d2ebc04d-1520-4bc3-b8b9-41c1914f900d">
-                                        <div class="square">
-                                            <img width="invalid-value" height="invalid-value" alt="Sách - Bảo mẫu bí mật của tiểu thư tập 1" class="product_item-img" style="object-fit: contain" src="https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-low5qzocvgbf42_tn">
-                                        </div>
-                                        <h4 class="nameofpr">Sách - Bảo mẫu bí mật của tiểu thư tập 1</h4>
-                                        <div class="product-text">
-                                            <span class="price_old">138.000đ</span>
-                                            <span class="price_new">110.400đ</span>
-                                        </div>
-                                        <div class="product_interact">
-                                            <span class="product-like product-like--liked">
-                                                
-                                                <i class="fa-solid fa-heart product-like--icon"></i>
-                                            </span>
-                                            <div class="startlight">
-                                                <i class="yello_star fa-solid fa-star"></i>
-                                                <i class="yello_star fa-solid fa-star"></i>
-                                                <i class="yello_star fa-solid fa-star"></i>
-                                                <i class="yello_star fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                            </div>
-                                        </div>
-                                        <div class="product-sell">
-                                            <span class="agugu">Đã bán 88</span>
-                                        </div>
-                                        <div class="favourite">
-                                            <i class="fa-solid fa-check"></i>
-                                            <span class="">Yêu thích</span>
-                                        </div>
-                                        <div class="product_sale">
-                                            <span class="value">-20%</span>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="col l-2-4 m-4 c-6">
-                                    <a class="home_product-item" href="https://shopee.vn/Truy%E1%BB%87n-Thi%C3%AAn-S%E1%BB%A9-Nh%C3%A0-B%C3%AAn-(B%E1%BA%A3n-Gi%E1%BB%9Bi-H%E1%BA%A1n)-i.242511295.22683258245?xptdk=ffe7bd48-6561-4bd7-948f-3934e06e19d5">
-                                        <div class="square">
-                                            <img width="invalid-value" height="invalid-value" alt="Sách - Bảo mẫu bí mật của tiểu thư tập 1" class="product_item-img" style="object-fit: contain" src="https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lmsndlme6dwf8c_tn">
-                                        </div>
-                                        <h4 class="nameofpr">Truyện - Thiên Sứ Nhà Bên (Bản Giới Hạn)</h4>
-                                        <div class="product-text">
-                                            <span class="price_old">95.000đ</span>
-                                            <span class="price_new">66.500đ</span>
-                                        </div>
-                                        <div class="product_interact">
-                                            <span class="product-like product-like--liked">
-                                                
-                                                <i class="fa-solid fa-heart product-like--icon"></i>
-                                            </span>
-                                            <div class="startlight">
-                                                <i class="yello_star fa-solid fa-star"></i>
-                                                <i class="yello_star fa-solid fa-star"></i>
-                                                <i class="yello_star fa-solid fa-star"></i>
-                                                <i class="yello_star fa-solid fa-star"></i>
-                                                <i class="yello_star fa-solid fa-star"></i>
-                                            </div>
-                                        </div>
-                                        <div class="product-sell">
-                                            <span class="agugu">Đã bán 507</span>
-                                        </div>
-                                        <div class="favourite">
-                                            <i class="fa-solid fa-check"></i>
-                                            <span class="">Yêu thích</span>
-                                        </div>
-                                        <div class="product_sale">
-                                            <span class="value">-30%</span>
-                                        </div>
-                                    </a>
-                                </div>
-
-
-
-                                <div class="col l-2-4 m-4 c-6">
-                                    <a class="home_product-item" href="https://shopee.vn/Truy%E1%BB%87n-Arya-B%C3%A0n-B%C3%AAn-Th%E1%BB%89nh-Tho%E1%BA%A3ng-L%E1%BA%A1i-Tr%C3%AAu-Gh%E1%BA%B9o-T%C3%B4i-B%E1%BA%B1ng-Ti%E1%BA%BFng-Nga-T%E1%BA%ADp-1-Hodico-i.1046898365.18083034909?sp_atk=1e141a9a-e1e9-4016-ab61-c6b027033ff7&xptdk=1e141a9a-e1e9-4016-ab61-c6b027033ff7">
-                                        <div class="square">
-                                            <img width="invalid-value" height="invalid-value" alt="Sách - Bảo mẫu bí mật của tiểu thư tập 1" class="product_item-img" style="object-fit: contain" src="https://down-vn.img.susercontent.com/file/vn-11134207-7qukw-lki59brnmx0o68_tn">
-                                        </div>
-                                        <h4 class="nameofpr">Truyện - Arya Bàn Bên Thỉnh Thoảng Lại Trêu Ghẹo Tôi Bằng Tiếng Nga Tập 1 - Hodico</h4>
-                                        <div class="product-text">
-                                            <span class="price_new">95.000đ</span>
-                                        </div>
-                                        <div class="product_interact">
-                                            <span class="product-like product-like--liked">
-                                                <i class="fa-solid fa-heart product-like--icon"></i>
-                                            </span>
-                                            <div class="startlight">
-                                                <i class="yello_star fa-solid fa-star"></i>
-                                                <i class="yello_star fa-solid fa-star"></i>
-                                                <i class="yello_star fa-solid fa-star"></i>
-                                                <i class="yello_star fa-solid fa-star"></i>
-                                                <i class="yello_star fa-solid fa-star"></i>
-                                            </div>
-                                        </div>
-                                        <div class="product-sell">
-                                            <span class="agugu">Đã bán 1,2k</span>
-                                        </div>
-                                         <div class="favourite">
-                                            <i class="fa-solid fa-check"></i>
-                                            <span class="">Yêu thích</span>
-                                        </div> 
-                        
-                                    </a>
-                                </div> --}}
+                                
 
 
 
@@ -213,359 +121,12 @@
                                 {{/each}}
 
 
-
-
-                                
-
-
-
-
-
-
-
-
-                                {{!-- <div class="col l-2-4 m-4 c-6">
-                                    <a class="home_product-item" href="https://shopee.vn/S%C3%A1ch-Arya-B%C3%A0n-B%C3%AAn-Th%E1%BB%89nh-Tho%E1%BA%A3ng-L%E1%BA%A1i-Tr%C3%AAu-Gh%E1%BA%B9o-T%C3%B4i-B%E1%BA%B1ng-Ti%E1%BA%BFng-Nga-2-i.90740928.21072458933?sp_atk=12730dda-d442-4570-b5c1-806100e58f79&xptdk=12730dda-d442-4570-b5c1-806100e58f79">
-                                        <img width="invalid-value" height="invalid-value" alt="Sách - Bảo mẫu bí mật của tiểu thư tập 1" class="product_item-img" style="object-fit: contain" src="https://down-vn.img.susercontent.com/file/sg-11134201-23020-o8wckl86w5mv80_tn">
-                                        <h4 class="nameofpr">Sách - Arya Bàn Bên Thỉnh Thoảng Lại Trêu Ghẹo Tôi Bằng Tiếng Nga 2</h4>
-                                        <div class="product-text">
-                                            <span class="price_old">95.000đ</span>
-                                            <span class="price_new">80.750đ</span>
-                                        </div>
-                                        <div class="product_interact">
-                                            <span class="product-like product-like--liked">
-                                                
-                                                <i class="fa-solid fa-heart product-like--icon"></i>
-                                            </span>
-                                            <div class="startlight">
-                                                <i class="yello_star fa-solid fa-star"></i>
-                                                <i class="yello_star fa-solid fa-star"></i>
-                                                <i class="yello_star fa-solid fa-star"></i>
-                                                <i class="yello_star fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                            </div>
-                                        </div>
-                                        <div class="product-sell">
-                                            <span class="agugu">Đã bán 1,6k</span>
-                                        </div>
-                                        <div class="favourite">
-                                            <i class="fa-solid fa-check"></i>
-                                            <span class="">Yêu thích</span>
-                                        </div>
-                                        <div class="product_sale">
-                                            <span class="value">-15%</span>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="col l-2-4 m-4 c-6">
-                                    <a class="home_product-item" href="https://shopee.vn/S%C3%A1ch-H%C3%A0nh-tr%C3%ACnh-c%E1%BB%A7a-Elaina-T%E1%BA%ADp-13-B%E1%BA%A3n-ph%E1%BB%95-th%C3%B4ng-v%C3%A0-%C4%91%E1%BA%B7c-bi%E1%BB%87t-Light-Novel-AMAK-i.408947013.21489531758?sp_atk=b001cc9b-b79f-48cd-9256-97fd10e32852&xptdk=b001cc9b-b79f-48cd-9256-97fd10e32852">
-                                        <img width="invalid-value" height="invalid-value" alt="Sách - Bảo mẫu bí mật của tiểu thư tập 1" class="product_item-img" style="object-fit: contain" src="https://down-vn.img.susercontent.com/file/vn-11134207-7qukw-lhpm4q114ddt42_tn">
-                                        <h4 class="nameofpr">Sách Hành trình của Elaina - Tập 13 - Bản phổ thông và đặc biệt - Light Novel - AMAK</h4>
-                                        <div class="product-text">
-                                            
-                                            <span class="price_new">136.000đ</span>
-                                        </div>
-                                        <div class="product_interact">
-                                            <span class="product-like product-like--liked">
-                                                
-                                                <i class="fa-solid fa-heart product-like--icon"></i>
-                                            </span>
-                                            <div class="startlight">
-                                                <i class="yello_star fa-solid fa-star"></i>
-                                                <i class="yello_star fa-solid fa-star"></i>
-                                                <i class="yello_star fa-solid fa-star"></i>
-                                                <i class="yello_star fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                            </div>
-                                        </div>
-                                        <div class="product-sell">
-                                            <span class="agugu">Đã bán 847</span>
-                                        </div>
-                                        <div class="favourite">
-                                            <i class="fa-solid fa-check"></i>
-                                            <span class="">Yêu thích</span>
-                                        </div>
-                                  
-                                    </a>
-                                </div>
-                                <div class="col l-2-4 m-4 c-6">
-                                    <a class="home_product-item" href="https://shopee.vn/S%C3%A1ch-86-EIGHTY-SIX-Ep4-i.90740928.13278933419?sp_atk=5d1f6253-aa4a-47bb-b7c1-bff3df6028ba&xptdk=5d1f6253-aa4a-47bb-b7c1-bff3df6028ba">
-                                        <img width="invalid-value" height="invalid-value" alt="Sách - Bảo mẫu bí mật của tiểu thư tập 1" class="product_item-img" style="object-fit: contain" src="https://down-vn.img.susercontent.com/file/6496c2d260dd9b5a01b000a95fb84bbd_tn">
-                                        <h4 class="nameofpr">Sách - 86 - EIGHTY SIX - Ep4</h4>
-                                        <div class="product-text">
-                                            <span class="price_old">120.000đ</span>
-                                            <span class="price_new">98.400đ</span>
-                                        </div>
-                                        <div class="product_interact">
-                                            <span class="product-like product-like--liked">
-                                                
-                                                <i class="fa-solid fa-heart product-like--icon"></i>
-                                            </span>
-                                            <div class="startlight">
-                                                <i class="yello_star fa-solid fa-star"></i>
-                                                <i class="yello_star fa-solid fa-star"></i>
-                                                <i class="yello_star fa-solid fa-star"></i>
-                                                <i class="yello_star fa-solid fa-star"></i>
-                                                <i class="yello_star fa-solid fa-star"></i>
-                                            </div>
-                                        </div>
-                                        <div class="product-sell">
-                                            <span class="agugu">Đã bán 989</span>
-                                        </div>
-                                        <div class="favourite">
-                                            <i class="fa-solid fa-check"></i>
-                                            <span class="">Yêu thích</span>
-                                        </div>
-                                        <div class="product_sale">
-                                            <span class="value">-18%</span>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="col l-2-4 m-4 c-6">
-                                    <a class="home_product-item" href="https://shopee.vn/S%C3%A1ch-V%E1%BB%A3-Trong-Game-C%E1%BB%A7a-T%C3%B4i-L%C3%A0-Idol-N%E1%BB%95i-Ti%E1%BA%BFng-Ngo%C3%A0i-%C4%90%E1%BB%9Di-T%E1%BA%ADp-3-T%E1%BA%B7ng-k%C3%A8m-Bookmark-Light-Novel-i.408947013.21193153055?sp_atk=4a4b7ffb-28cb-4c5b-9d6f-66a20c89e40e&xptdk=4a4b7ffb-28cb-4c5b-9d6f-66a20c89e40e">
-                                        <img width="invalid-value" height="invalid-value" alt="Sách - Bảo mẫu bí mật của tiểu thư tập 1" class="product_item-img" style="object-fit: contain" src="https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-llps2ppxbhlr7c_tn">
-                                        <h4 class="nameofpr">Sách Vợ Trong Game Của Tôi Là Idol Nổi Tiếng Ngoài Đời - Tập 3 - Tặng kèm Bookmark - Light Novel</h4>
-                                        <div class="product-text">
-                                            <span class="price_old">139.000đ</span>
-                                            <span class="price_new">127.800đ</span>
-                                        </div>
-                                        <div class="product_interact">
-                                            <span class="product-like product-like--liked">
-                                                <i class="fa-regular fa-heart product-like--icon-nolike"></i>
-                                                
-                                            </span>
-                                            <div class="startlight">
-                                                <i class="yello_star fa-solid fa-star"></i>
-                                                <i class="yello_star fa-solid fa-star"></i>
-                                                <i class="yello_star fa-solid fa-star"></i>
-                                                <i class=" fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                            </div>
-                                        </div>
-                                        <div class="product-sell">
-                                            <span class="agugu">Đã bán 5</span>
-                                        </div>
-                                        <div class="product_sale">
-                                            <span class="value">-8%</span>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="col l-2-4 m-4 c-6">
-                                    <a class="home_product-item" href="https://shopee.vn/S%C3%A1ch-86-EIGHTY-SIX-Ep.5-(Light-Novel)-i.90740928.21601716286?sp_atk=0483ffad-88e7-4806-9d40-5379deb9a5da&xptdk=0483ffad-88e7-4806-9d40-5379deb9a5da">
-                                        <img width="invalid-value" height="invalid-value" alt="Sách - Bảo mẫu bí mật của tiểu thư tập 1" class="product_item-img" style="object-fit: contain" src="https://down-vn.img.susercontent.com/file/727eaba7315a2ffb1771ac9c7dbd6417_tn">
-                                        <h4 class="nameofpr">Sách - 86 - EIGHTY SIX - Ep.5 (Light Novel)</h4>
-                                        <div class="product-text">
-                                            <span class="price_old">146.000đ</span>
-                                            <span class="price_new">118.900đ</span>
-                                        </div>
-                                        <div class="product_interact">
-                                            <span class="product-like product-like--liked">
-                                                <i class="fa-regular fa-heart product-like--icon-nolike"></i>
-                                                
-                                            </span>
-                                            <div class="startlight">
-                                                <i class="yello_star fa-solid fa-star"></i>
-                                                <i class="yello_star fa-solid fa-star"></i>
-                                                <i class="yello_star fa-solid fa-star"></i>
-                                                <i class="yello_star fa-solid fa-star"></i>
-                                                <i class="yello_star fa-solid fa-star"></i>
-                                            </div>
-                                        </div>
-                                        <div class="product-sell">
-                                            <span class="agugu">Đã bán 939</span>
-                                        </div>
-        
-                                        <div class="product_sale">
-                                            <span class="value">-18%</span>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="col l-2-4 m-4 c-6">
-                                    <a class="home_product-item" href="https://shopee.vn/S%C3%A1ch-Em-l%C3%A0-ng%C6%B0%E1%BB%9Di-s%E1%BB%91ng-t%C3%B4i-l%C3%A0-ng%C6%B0%E1%BB%9Di-ch%E1%BA%BFt-th%E1%BA%BF-gi%E1%BB%9Bi-%C4%91%C3%B4i-l%C3%BAc-l%E1%BA%A1i-%C4%91%E1%BA%A3o-ng%C6%B0%E1%BB%A3c-i.50966696.19406681432?sp_atk=7771e031-e04d-4b1d-b7bf-de343d0999fe&xptdk=7771e031-e04d-4b1d-b7bf-de343d0999fe">
-                                        <img width="invalid-value" height="invalid-value" alt="Sách - Bảo mẫu bí mật của tiểu thư tập 1" class="product_item-img" style="object-fit: contain" src="https://down-vn.img.susercontent.com/file/e6832d93f776be52f52131758cda9046_tn">
-                                        <h4 class="nameofpr">Sách - Em là người sống, tôi là người chết, thế giới đôi lúc lại đảo ngược</h4>
-                                        <div class="product-text">
-                                            <span class="price_old">115.000đ</span>
-                                            <span class="price_new">89.700đ</span>
-                                        </div>
-                                        <div class="product_interact">
-                                            <span class="product-like product-like--liked">
-                                                <i class="fa-regular fa-heart product-like--icon-nolike"></i>
-                                                
-                                            </span>
-                                            <div class="startlight">
-                                                <i class="yello_star fa-solid fa-star"></i>
-                                                <i class="yello_star fa-solid fa-star"></i>
-                                                <i class="yello_star fa-solid fa-star"></i>
-                                                <i class="yello_star fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                            </div>
-                                        </div>
-                                        <div class="product-sell">
-                                            <span class="agugu">Đã bán 269</span>
-                                        </div>
-                                        
-                                        <div class="product_sale">
-                                            <span class="value">-22%</span>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="col l-2-4 m-4 c-6">
-                                    <a class="home_product-item" href="https://shopee.vn/S%C3%A1ch-Spy-room-%E2%80%93-L%E1%BB%9Bp-h%E1%BB%8Dc-%C4%91i%E1%BB%87p-vi%C3%AAn-5-Gujin-Elna-i.50966696.22613640152?sp_atk=df849605-c5e2-4268-869f-5db63de815f0&xptdk=df849605-c5e2-4268-869f-5db63de815f0">
-                                        <img width="invalid-value" height="invalid-value" alt="Sách - Bảo mẫu bí mật của tiểu thư tập 1" class="product_item-img" style="object-fit: contain" src="https://down-vn.img.susercontent.com/file/sg-11134201-22120-2nt9mnzy2elv37_tn">
-                                        <h4 class="nameofpr">Sách - Spy room – Lớp học điệp viên 5: Gujin Elna</h4>
-                                        <div class="product-text">
-                                            <span class="price_old">109.000đ</span>
-                                            <span class="price_new">87.200đ</span>
-                                        </div>
-                                        <div class="product_interact">
-                                            <span class="product-like product-like--liked">
-                                                <i class="fa-regular fa-heart product-like--icon-nolike"></i>
-                                                
-                                            </span>
-                                            <div class="startlight">
-                                                <i class="yello_star fa-solid fa-star"></i>
-                                                <i class="yello_star fa-solid fa-star"></i>
-                                                <i class="yello_star fa-solid fa-star"></i>
-                                                <i class="yello_star fa-solid fa-star"></i>
-                                                <i class="yello_star fa-solid fa-star"></i>
-                                            </div>
-                                        </div>
-                                        <div class="product-sell">
-                                            <span class="agugu">Đã bán 140</span>
-                                        </div>
-                                      
-                                        <div class="product_sale">
-                                            <span class="value">-20%</span>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="col l-2-4 m-4 c-6">
-                                    <a class="home_product-item" href="https://shopee.vn/S%C3%A1ch-Th%E1%BA%BF-Gi%E1%BB%9Bi-Otome-Game-Th%E1%BA%ADt-Kh%E1%BA%AFc-Nghi%E1%BB%87t-V%E1%BB%9Bi-Nh%C3%A2n-V%E1%BA%ADt-Qu%E1%BA%A7n-Ch%C3%BAng-T%E1%BA%ADp-1-(T%C3%A1i-B%E1%BA%A3n)-i.45194730.16079875874?sp_atk=18fc4da3-aa57-4505-9eb5-1d39ac2229db&xptdk=18fc4da3-aa57-4505-9eb5-1d39ac2229db">
-                                        <img width="invalid-value" height="invalid-value" alt="Sách - Bảo mẫu bí mật của tiểu thư tập 1" class="product_item-img" style="object-fit: contain" src="https://down-vn.img.susercontent.com/file/aa1d7cb984de69eb536f150b0d998cdc_tn">
-                                        <h4 class="nameofpr">Sách - Thế Giới Otome Game Thật Khắc Nghiệt Với Nhân Vật Quần Chúng - Tập 1 (Tái Bản)</h4>
-                                        <div class="product-text">
-                                            <span class="price_old">157.000đ</span>
-                                            <span class="price_new">125.600đ</span>
-                                        </div>
-                                        <div class="product_interact">
-                                            <span class="product-like product-like--liked">
-                                                <i class="fa-regular fa-heart product-like--icon-nolike"></i>
-                                                
-                                            </span>
-                                            <div class="startlight">
-                                                <i class="yello_star fa-solid fa-star"></i>
-                                                <i class="yello_star fa-solid fa-star"></i>
-                                                <i class="yello_star fa-solid fa-star"></i>
-                                                <i class="yello_star fa-solid fa-star"></i>
-                                                <i class="yello_star fa-solid fa-star"></i>
-                                            </div>
-                                        </div>
-                                        <div class="product-sell">
-                                            <span class="agugu">Đã bán 75</span>
-                                        </div>
-                                       
-                                        <div class="product_sale">
-                                            <span class="value">-20%</span>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="col l-2-4 m-4 c-6">
-                                    <a class="home_product-item" href="https://shopee.vn/S%C3%A1ch-Arifureta-T%E1%BA%ADp-1-T%E1%BB%AB-T%E1%BA%A7m-Th%C6%B0%E1%BB%9Dng-%C4%90%E1%BA%BFn-B%E1%BA%A5t-Kh%E1%BA%A3-Chi%E1%BA%BFn-B%E1%BA%A1i-T%E1%BA%B7ng-k%C3%A8m-1-Bookmark-v%C3%A0-1-Postcard-Light-Novel-AMAK-i.408947013.14560850113?sp_atk=8ffe1aff-d176-4934-8294-eb28eaaef4ff&xptdk=8ffe1aff-d176-4934-8294-eb28eaaef4ff">
-                                        <img width="invalid-value" height="invalid-value" alt="Sách - Bảo mẫu bí mật của tiểu thư tập 1" class="product_item-img" style="object-fit: contain" src="https://down-vn.img.susercontent.com/file/vn-11134207-7qukw-lh2swbvgitbn53_tn">
-                                        <h4 class="nameofpr">Sách Arifureta - Tập 1 - Từ Tầm Thường Đến Bất Khả Chiến Bại - Tặng kèm 1 Bookmark và 1 Postcard - Light Novel - AMAK</h4>
-                                        <div class="product-text">
-                                            <span class="price_old">139.000đ</span>
-                                            <span class="price_new">118.150đ</span>
-                                        </div>
-                                        <div class="product_interact">
-                                            <span class="product-like product-like--liked">
-                                                <i class="fa-regular fa-heart product-like--icon-nolike"></i>
-                                                
-                                            </span>
-                                            <div class="startlight">
-                                                <i class="yello_star fa-solid fa-star"></i>
-                                                <i class="yello_star fa-solid fa-star"></i>
-                                                <i class="yello_star fa-solid fa-star"></i>
-                                                <i class="yello_star fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                            </div>
-                                        </div>
-                                        <div class="product-sell">
-                                            <span class="agugu">Đã bán 8</span>
-                                        </div>
-                                       
-                                        <div class="product_sale">
-                                            <span class="value">-15%</span>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="col l-2-4 m-4 c-6">
-                                    <a class="home_product-item" href="https://shopee.vn/S%C3%A1ch-Sword-Art-Online-T%E1%BA%ADp-25-B%E1%BA%A3n-ph%E1%BB%95-th%C3%B4ng-v%C3%A0-%C4%91%E1%BA%B7c-bi%E1%BB%87t-Light-Novel-IPM-i.408947013.22245369831?sp_atk=678af1e6-5a6a-472e-959c-f576b4ae9dc3&xptdk=678af1e6-5a6a-472e-959c-f576b4ae9dc3">
-                                        <img width="invalid-value" height="invalid-value" alt="Sách - Bảo mẫu bí mật của tiểu thư tập 1" class="product_item-img" style="object-fit: contain" src="https://down-vn.img.susercontent.com/file/vn-11134207-7qukw-lhy78ly9tupt87_tn">
-                                        <h4 class="nameofpr">Sách Sword Art Online - Tập 25 - Bản phổ thông và đặc biệt - Light Novel - IPM</h4>
-                                        <div class="product-text">
-                                            <span class="price_new">112.500đ</span>
-                                            
-                                        </div>
-                                        <div class="product_interact">
-                                            <span class="product-like product-like--liked">
-                                                <i class="fa-regular fa-heart product-like--icon-nolike"></i>
-                                                
-                                            </span>
-                                            <div class="startlight">
-                                                <i class="yello_star fa-solid fa-star"></i>
-                                                <i class="yello_star fa-solid fa-star"></i>
-                                                <i class="yello_star fa-solid fa-star"></i>
-                                                <i class=" fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                            </div>
-                                        </div>
-                                        <div class="product-sell">
-                                            <span class="agugu">Đã bán 10</span>
-                                        </div>
-                                      
-                                 
-                                    </a>
-                                </div>
-                                <div class="col l-2-4 m-4 c-6">
-                                    <a class="home_product-item" href="https://shopee.vn/S%C3%A1ch-Chuy%E1%BB%87n-t%C3%ACnh-thanh-xu%C3%A2n-bi-h%C3%A0i-c%E1%BB%A7a-t%C3%B4i-qu%E1%BA%A3-nhi%C3%AAn-l%C3%A0-sai-l%E1%BA%A7m-14-Light-Novel-(Thai-Ha-Books)-i.1007082804.23547179636?sp_atk=3ec15fc1-aee7-4163-8184-1c75fab6cf9c&xptdk=3ec15fc1-aee7-4163-8184-1c75fab6cf9c">
-                                        <img width="invalid-value" height="invalid-value" alt="Sách - Bảo mẫu bí mật của tiểu thư tập 1" class="product_item-img" style="object-fit: contain" src="https://down-vn.img.susercontent.com/file/vn-11134201-7qukw-lisp17r9d5ua39_tn">
-                                        <h4 class="nameofpr">Sách - Chuyện tình thanh xuân bi hài của tôi quả nhiên là sai lầm 14 - Light Novel (Thai Ha Books)</h4>
-                                        <div class="product-text">
-                                            <span class="price_old">159.000đ</span>
-                                            <span class="price_new">127.200đ</span>
-                                        </div>
-                                        <div class="product_interact">
-                                            <span class="product-like product-like--liked">
-                                                <i class="fa-regular fa-heart product-like--icon-nolike"></i>
-                                                
-                                            </span>
-                                            <div class="startlight">
-                                                <i class="yello_star fa-solid fa-star"></i>
-                                                <i class="yello_star fa-solid fa-star"></i>
-                                                <i class="yello_star fa-solid fa-star"></i>
-                                                <i class="yello_star fa-solid fa-star"></i>
-                                                <i class="yello_star fa-solid fa-star"></i>
-                                            </div>
-                                        </div>
-                                        <div class="product-sell">
-                                            <span class="agugu">Đã bán 122</span>
-                                        </div>
-                                        
-                                        <div class="product_sale">
-                                            <span class="value">-20%</span>
-                                        </div>
-                                    </a>
-                                </div> --}}
-                                
-
                             </div>
                         </div>
                         <ul class="pagination home_product_pagination">
                             {{#if (gt current 1)}}
                                 <li class="pagination-item">
-                                    <a href="/?page={{subtract current 1}}" class="pagination-item_link">
+                                    <a href="{{pagination_path}}?page={{subtract current 1}}{{#if searchTerm}}&q={{searchTerm}}{{/if}}" class="pagination-item_link">
                                         <i class="fa-solid fa-chevron-left pagination-item_link-icon"></i>
                                     </a>
                                 </li>
@@ -573,7 +134,7 @@
                                 
                             {{#each (range 1 pages)}}
                                 <li class="pagination-item">
-                                    <a href="/?page={{this}}" class="pagination-item_link" {{#if (eq ../current this) }}id="current_page"{{/if}}>
+                                    <a href="{{pagination_path}}?page={{this}}{{#if ../searchTerm}}&q={{../searchTerm}}{{/if}}" class="pagination-item_link" {{#if (eq ../current this) }}id="current_page"{{/if}}>
                                         {{this}}
                                     </a>
                                 </li>
@@ -581,7 +142,7 @@
 
                             {{#if (lt current pages)}}
                                 <li class="pagination-item">
-                                    <a href="/?page={{add current 1}}" class="pagination-item_link">
+                                    <a href="{{pagination_path}}?page={{add current 1}}{{#if searchTerm}}&q={{searchTerm}}{{/if}}" class="pagination-item_link">
                                         <i class="fa-solid fa-chevron-right pagination-item_link-icon"></i>
                                     </a>
                                 </li>

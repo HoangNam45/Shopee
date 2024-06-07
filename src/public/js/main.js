@@ -454,6 +454,7 @@ const control_product_quantity=document.getElementById('control_product_quantity
                         const li = document.createElement('li');
                         const a = document.createElement('a');
                         a.textContent = product;
+                        a.href=`/search_product?q=${encodeURIComponent(product)}`
                         li.classList.add('history_item')
                         li.appendChild(a);
                         product_suggestion.appendChild(li);
@@ -475,3 +476,14 @@ find_product_form.addEventListener('submit', function(e){
     const query=search_product.value;
     window.location.href = `/search_product?q=${encodeURIComponent(query)}`;
 })
+
+
+search_product.addEventListener('focus', function(){
+    document.getElementById('search_history').style.display='block'
+})
+document.addEventListener('click', (event) => {
+    const search_history=document.getElementById('search_history')
+    if (!search_product.contains(event.target) && !search_history.contains(event.target)) {
+        search_history.style.display = 'none';
+    }
+});

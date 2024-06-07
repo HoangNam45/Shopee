@@ -28,6 +28,7 @@ class SiteController {
             data,
             products,
             current: page,
+            pagination_path:'/',
             pages: Math.ceil(count / perPage)
         });
     } catch (err) {
@@ -130,6 +131,8 @@ class SiteController {
             res.render('home', {
                 data,
                 products,
+                pagination_path:'/search_product/',
+                searchTerm,
                 current: page,
                 pages: Math.ceil(count / perPage)
             });

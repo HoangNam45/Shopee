@@ -531,8 +531,7 @@
   display: none;
   z-index: 1; }
 
-.timkiemtrongtimkiem:focus ~ .search_history {
-  display: block; }
+
 
 .history_elements {
   margin: 6px 12px;
@@ -543,7 +542,8 @@
 .history_search_elements {
   padding-left: 0;
   list-style: none;
-  margin: 8px 0 0 0; }
+  /* margin: 8px 0 0 0;  */
+}
 
 .history_item {
   height: 38px;
@@ -561,7 +561,11 @@
   text-decoration: none;
   font-size: 1rem;
   color: #666;
-  line-height: 38px; }
+  display: block;
+  width: 100%;
+  line-height: 38px;
+ }
+
 
 /* CART */
 .cart_list {
@@ -1488,4 +1492,19 @@
 }
 #current_page{
   color: #fe6433;
+}
+.search_result_text{
+    color: #555;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 1.1rem;
+    font-weight: 400;
+    margin: 0 0 1.5rem;
+
+}
+.search_result_text_icon{
+  color: #555;
+  
+  margin: 0 .75rem 0 0;
 }
