@@ -1142,6 +1142,7 @@
       justify-content: center;
       background-color: #f2f2f2;
       
+      
   }
   .pass_inner{
     background: #fff;
@@ -1507,4 +1508,80 @@
   color: #555;
   
   margin: 0 .75rem 0 0;
+}
+.seller_wrap{
+    width: 100%;
+    min-height: 595px;
+    display: flex;
+    justify-content: center;
+    background-color: #f2f2f2;
+    min-height: 110px;
+   
+}    
+
+.seller_info{
+  border-radius: .125rem;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .13);
+  box-sizing: border-box;
+  display: flex;
+  margin: 0 30px 30px;
+  width: 1300px;
+  background-color: #fff;
+  height: 110px;
+  
+}
+.avatar_seller{
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  cursor: pointer;
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
+}
+.avatar_seller_wrap{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 15px;
+}
+.name_seller_wrap{
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin-left: 20px;
+}
+.name_seller_interact{
+  display: flex;
+}
+.name_seller_interact_chat{
+  margin-right: 15px;  
+}
+
+.btn_case{
+  min-width: 113px;
+  height: 30px;
+  text-decoration: none;
+  border-radius: 2px;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: 500;
+  padding: 0 8px;
+}
+.btn_shop_info{
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, .09);
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .03);
+    color: #555;
+    outline: 0;
+    overflow: visible;
+    position: relative;
+    
+}
+.name_seller{
+  color: rgba(0, 0, 0, .87);
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
 }
